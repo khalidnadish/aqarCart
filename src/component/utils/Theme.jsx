@@ -5,6 +5,7 @@ export const darkTheme = {
   textSoft:"#aaaaaa",
   soft:"#373737",
   price:"#AA0000",
+  hrColor:"#ccc",
  
   boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
 }
@@ -15,6 +16,7 @@ export const lightTheme = {
   textSoft:"#606060",
   soft:"#f5f5f5",
   price:"#350de7",
+  hrColor:"#ccc",
   
   boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px"
 }

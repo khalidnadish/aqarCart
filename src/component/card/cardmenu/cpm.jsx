@@ -1,138 +1,76 @@
 import styled from "styled-components";
+
 const Container = styled.div`
-  position: relative;
-  width: 300px;
-  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
- 
+  /* justify-content: center; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: ${({ theme }) => theme.soft};
+  color: ${({ theme }) => theme.text};
+  border: 0 solid;
   gap: 10px;
-  box-shadow:${({ theme }) => theme.boxShadow};
+  box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: 8px;
-  background-color:${({ theme }) => theme.bg};
+
   @media only screen and (max-width: 480px) {
     width: 100%;
     justify-content: center;
   }
 `;
 
-const Image = styled.img`
-  max-width: 100%;
-  max-height:100% ;
-  /* height: auto; */
-  vertical-align: bottom;
-  object-fit: contain;
+const MenuItemWrper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: .5px solid ${({ theme }) => theme.hrColor} ;
+  cursor: pointer;
+  &:hover{
+    border-bottom: 2px solid ${({ theme }) => theme.price} ;
+    /* background-color:${({ theme }) => theme.text}; */
+ 
+  }
 `;
 
-const imageWarper = styled.div`
+const MenuHeaderItemWrper = styled.div`
   width: 100%;
-  height: 50%;
-  background-color: ${({ theme }) => theme.bg};
-`;
-const subTitleWarper = styled.div`
-  width: 100%;
-  height: 100px;
-  background-color: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.text};
-  font-size: .9rem;
-  padding:.5em;
-  overflow-y: auto;
-`;
-const actionWarper = styled.div`
+  height: 20px;
+  margin-top: 15px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  width: 100%;
-  height: 50px;
-  color: ${({ theme }) => theme.text};
+  gap: 12px;
+  padding: 10px;
+  /* background-color: ${({ theme }) => theme.soft}; */
   background-color: ${({ theme }) => theme.soft};
-
-
-  border-radius: 0px 0px 8px 8px;
-  box-shadow:${({ theme }) => theme.boxShadow};
-`;
-
-const footeIconWarper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 8px;
-  background-color: ${({ theme }) => theme.soft};;
   color: ${({ theme }) => theme.text};
-  box-shadow:${({ theme }) => theme.boxShadow};
-  font-size: 15px;
+  cursor: pointer;
 `;
 
-const footeIconTextWarper = styled.div`
-font-size: 10px;
-font-weight: lighter;
-font-style: italic;
-color: inherit;
-font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-`;
-
-const footeIconWithTextWarper = styled.div`
-
-display: flex;
-flex-direction:column;
-justify-content: center;
-align-items: center;
-`;
-
-const ServicePrice = styled.h4`
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  width: fit-content;
-  background-color: ${({ color }) => color};
+const MenuItem = styled.div`
+  font-size: 14px;
+  background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.text};
-  font-weight: bold;
-  border-radius: 0px 8px 8px 0px;
-  padding: 12px 8px 12px 8px;
-  @media only screen and (max-width: 480px) {
-    font-size: 14px;
+  &:hover{
+    color: ${({ theme }) => theme.price};
   }
 `;
-
-const TextDetail = styled.p`
-  margin-top: 10px;
-  text-align: right;
-  font-family: "Cairo", sans-serif;
-  font-weight: 300;
-  line-height: 1.9rem;
+const MenuIcon = styled.div`
+  background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.text};
-  @media only screen and (max-width: 480px) {
-    font-size: 14px;
-  }
-`;
-
-const SubTextDetail = styled.li`
-  margin-top: 5px;
-  text-align: right;
-  font-family: "Cairo", sans-serif;
-  font-weight: 300;
-  line-height: 1.9rem;
-  color: ${({ theme }) => theme.text};
-  width: 100%;
-  @media only screen and (max-width: 480px) {
-    font-size: 14px;
-  }
+  
 `;
 
 export default {
   Container,
-  Image,
-  ServicePrice,
-  TextDetail,
-  SubTextDetail,
-  imageWarper,
-  subTitleWarper,
-  actionWarper,
-  footeIconWarper,
-  footeIconTextWarper,
-  footeIconWithTextWarper,
+  MenuItemWrper,
+  MenuHeaderItemWrper,
+  MenuItem,
+  MenuIcon,
 };

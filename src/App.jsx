@@ -7,12 +7,17 @@ import MiniCard from './component/card/MiniCard'
 
 function App() {
  
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(true) ;
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
     <div className="App">
        
+       <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
+       <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
+       <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
+       <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
+       <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
        <MiniCard title="TST"  detail="DFDFD"  sts="مجاني" color="crimson" />
     </div>
     </ThemeProvider>
