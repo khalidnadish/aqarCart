@@ -35,6 +35,7 @@ align-items: center;
  
   font-size:20px ;
   margin-left: 5px;
+  margin-right: 5px;
   cursor: pointer;
 `;
 
@@ -44,14 +45,18 @@ justify-content: center;
 align-items: center;
 
   width: 30%;
-  height: 38px;
+  height: 30px;
   background-color:${({ theme }) => theme.soft};
   border-radius: 8px;
   font-weight: bolder;
-  border: 0.5px solid #ccc;
+  /* border: 0.5px solid #ccc; */
   margin:3px 3px; 
+  margin-left: 5px;
   margin-right: 5px;
-
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
+&:hover {
+  transition: scale(1.1);
+}
   
   
 `;
@@ -68,7 +73,8 @@ font-family: "Cairo";
   background-color: ${({ theme }) => theme.soft};
   border-radius: 8px;
   font-weight: bolder;
-  /* border: 0.5px solid  ${({ theme }) => theme.bgLighter}; */
+  
+  
   margin:3px 3px; 
   
 `;

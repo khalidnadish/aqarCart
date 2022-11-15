@@ -10,7 +10,10 @@ import "./App.css";
 
 const Container = styled.div`
   display: flex;
+  margin: auto;
+  min-width: 300px;
   flex-direction: column;
+
   background-color:${({ theme }) => theme.bgLighter}; 
 `;
 
@@ -23,6 +26,7 @@ const BodyWrapper = styled.div`
   padding: 20px 0px;
   @media (max-width: 400px) {
     padding: 10px 20px;
+    flex-direction: column;
   }
 `;
 

@@ -7,15 +7,17 @@ const Container = styled.div`
   /* justify-content: center; */
   position: absolute;
   top: 0;
-  left: 0;
+  right: 0;
   width: 50%;
   height: 100%;
-  background-color: ${({ theme }) => theme.soft};
+   
+  background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
   border: 0 solid;
   gap: 10px;
-  box-shadow: ${({ theme }) => theme.boxShadow};
+  /* box-shadow:0 0 0rem .5em blue; */
   border-radius: 8px;
+  box-shadow: inset 0 0 20px -10px ;
 
   @media only screen and (max-width: 480px) {
     width: 100%;
@@ -47,22 +49,21 @@ const MenuHeaderItemWrper = styled.div`
   align-items: center;
   gap: 12px;
   padding: 10px;
-  /* background-color: ${({ theme }) => theme.soft}; */
-  background-color: ${({ theme }) => theme.soft};
+  /* background-color: ${({ theme }) => theme.nafbar}; */
   color: ${({ theme }) => theme.text};
   cursor: pointer;
 `;
 
 const MenuItem = styled.div`
   font-size: 14px;
-  background-color: ${({ theme }) => theme.soft};
+  background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
   &:hover{
     color: ${({ theme }) => theme.price};
   }
 `;
 const MenuIcon = styled.div`
-  background-color: ${({ theme }) => theme.soft};
+  background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
   
 `;

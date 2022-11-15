@@ -8,6 +8,13 @@ flex-wrap: wrap;
 justify-content: space-evenly;
 align-items:center;
 gap: 1rem;
+ 
+
+@media only screen and (max-width: 728px) {
+    flex-direction: column;
+    
+    flex-wrap: nowrap;
+  }
 
 `;
 

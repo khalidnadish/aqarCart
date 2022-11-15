@@ -20,31 +20,31 @@ function CardMenu({ menu, setMenu }) {
         setMenu(false);
       }}>
         <cpm.MenuIcon>
-          <IoMdArrowRoundBack />
         </cpm.MenuIcon>
+          <IoMdArrowRoundBack />
         <cpm.MenuItem>عودة</cpm.MenuItem>
       </cpm.MenuHeaderItemWrper>
       <global.Hr />
 {/* ---------------------------------------- */}
       <cpm.MenuItemWrper>
+        <cpm.MenuItem>طلب معاينة</cpm.MenuItem>
         <cpm.MenuIcon>
           <RiLandscapeLine  />
         </cpm.MenuIcon>
-        <cpm.MenuItem>طلب معاينة</cpm.MenuItem>
       </cpm.MenuItemWrper>
 {/* ----------------------------------------  */}
       <cpm.MenuItemWrper>
+        <cpm.MenuItem>طلب اتصال</cpm.MenuItem>
         <cpm.MenuIcon>
           <BiPhoneCall />
         </cpm.MenuIcon>
-        <cpm.MenuItem>طلب اتصال</cpm.MenuItem>
       </cpm.MenuItemWrper>
 {/* ---------------------------------------- */}      
       <cpm.MenuItemWrper>
+        <cpm.MenuItem>طلب سعر نهائي</cpm.MenuItem>
         <cpm.MenuIcon>
           <MdOutlinePriceCheck />
         </cpm.MenuIcon>
-        <cpm.MenuItem>طلب سعر نهائي</cpm.MenuItem>
       </cpm.MenuItemWrper>      
 
 
