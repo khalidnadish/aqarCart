@@ -1,10 +1,11 @@
 import React from "react";
-import global from "../global/global";
+import global from "../../global/global";
 import styled from "styled-components";
-import { AiOutlineEye } from "react-icons/ai";
+import cpm from "./cpm"
+
 import { IoMdArrowRoundBack } from "react-icons/io";
 
-import { GrOverview } from "react-icons/gr";
+import { RiLandscapeLine } from "react-icons/ri";
 
 import { MdOutlinePriceCheck } from "react-icons/md";
 import { BiPhoneCall } from "react-icons/bi";
@@ -20,22 +21,13 @@ const Container = styled.div`
   left: 0;
   width: 50%;
   height: 100%;
-  background-color: aquamarine;
+  background-color: ${({ theme }) => theme.soft};
+  color:  ${({ theme }) => theme.text};
   border: 0 solid;
   gap: 10px;
-  box-shadow: 0 1px 6px rgb(32 33 36 / 100%);
+  box-shadow: ${({ theme }) => theme.boxShadow};
   border-radius: 8px;
-  /* 
-  opacity: ${(props) => (props.open ? "1" : "0")};
-  max-height: ${(props) => (props.open ? "100%" : "0")};
-  background-color:${(props) => (props.open ? "aquamarine" : "green")};
-  overflow: hidden;
-  padding: ${(props) => (props.open ? "15px" : "0 15px")};
-  transition: all 1s;
-
-  transition: all 0.3s linear;
-     
-    transform-origin: 1px; */
+  
 
   @media only screen and (max-width: 480px) {
     width: 100%;
@@ -53,18 +45,38 @@ const MenuItemWrper = styled.div`
 
 `;
 
-const MenuItem = styled.div`
-font-size: 14px;
+
+const MenuHeaderItemWrper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+  background-color: ${({ theme }) => theme.soft};
+  color:  ${({ theme }) => theme.text};
+  cursor: pointer;
 
 `;
-const MenuIcon = styled.div``;
+
+const MenuItem = styled.div`
+font-size: 14px;
+background-color: ${({ theme }) => theme.soft};
+  color:  ${({ theme }) => theme.text};
+
+`;
+const MenuIcon = styled.div`
+ background-color: ${({ theme }) => theme.soft};
+  color:  ${({ theme }) => theme.text};
+
+`;
 
 function CardMenu({ menu, setMenu }) {
   return (
     <Container
       
     >
-      <MenuItemWrper open={menu}
+      <MenuHeaderItemWrper open={menu}
       onClick={() => {
         setMenu(false);
       }}>
@@ -72,12 +84,12 @@ function CardMenu({ menu, setMenu }) {
           <IoMdArrowRoundBack />
         </MenuIcon>
         <MenuItem>عودة</MenuItem>
-      </MenuItemWrper>
+      </MenuHeaderItemWrper>
       <global.Hr />
 {/* ---------------------------------------- */}
       <MenuItemWrper>
         <MenuIcon>
-          <GrOverview />
+          <RiLandscapeLine  />
         </MenuIcon>
         <MenuItem>طلب معاينة</MenuItem>
       </MenuItemWrper>

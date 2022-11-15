@@ -6,6 +6,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+ 
   gap: 10px;
   box-shadow:${({ theme }) => theme.boxShadow};
   border-radius: 8px;
@@ -61,8 +62,6 @@ const footeIconWarper = styled.div`
   background-color: ${({ theme }) => theme.soft};;
   color: ${({ theme }) => theme.text};
   box-shadow:${({ theme }) => theme.boxShadow};
- 
-
   font-size: 15px;
 `;
 

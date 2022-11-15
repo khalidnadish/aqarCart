@@ -1,51 +1,18 @@
 import styled from "styled-components";
-const Container = styled.div`
-  position: relative;
-  width: 300px;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  box-shadow:${({ theme }) => theme.boxShadow};
-  border-radius: 8px;
-  background-color:${({ theme }) => theme.bg};
-  @media only screen and (max-width: 480px) {
-    width: 100%;
-    justify-content: center;
-  }
-`;
-
-const Image = styled.img`
-  max-width: 100%;
-  max-height:100% ;
-  /* height: auto; */
-  vertical-align: bottom;
-  object-fit: contain;
-`;
-
-const imageWarper = styled.div`
-  width: 100%;
-  height: 50%;
-  background-color: ${({ theme }) => theme.bg};
-`;
-const subTitleWarper = styled.div`
-  width: 100%;
-  height: 100px;
-  background-color: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.text};
-  font-size: .9rem;
-  padding:.5em;
-  overflow-y: auto;
-`;
+ 
+ 
 const actionWarper = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 50px;
+  height: 45px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.soft};
+  border-top: 1px solid ${({ theme }) => theme.textSoft};
 
 
   border-radius: 0px 0px 8px 8px;
@@ -60,9 +27,7 @@ const footeIconWarper = styled.div`
   margin-top: 8px;
   background-color: ${({ theme }) => theme.soft};;
   color: ${({ theme }) => theme.text};
-  box-shadow:${({ theme }) => theme.boxShadow};
  
-
   font-size: 15px;
 `;
 
@@ -125,13 +90,13 @@ const SubTextDetail = styled.li`
 `;
 
 export default {
-  Container,
-  Image,
-  ServicePrice,
-  TextDetail,
-  SubTextDetail,
-  imageWarper,
-  subTitleWarper,
+  
+  
+ 
+  
+ 
+ 
+ 
   actionWarper,
   footeIconWarper,
   footeIconTextWarper,
