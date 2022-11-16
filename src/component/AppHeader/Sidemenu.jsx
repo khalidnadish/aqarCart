@@ -19,8 +19,6 @@ let useClickOutside = (handler) => {
 };
 
 
-
-
 function Sidemenu({ open, setOpen }) {
   let domNode = useClickOutside(() => {
     setOpen(false);
