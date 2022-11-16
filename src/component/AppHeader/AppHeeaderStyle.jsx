@@ -60,13 +60,39 @@ flex:7;
    display: none;
   }
 `;
+const Navigator= styled.div``;
 
+const SideMenu= styled.div`
+position: fixed;
+top: 35px;
+/* right: 0; */
+width: 20%;
+height:70% ;
+color: ${({ theme }) => theme.text};
+background-color: ${({ theme }) => theme.soft};
+
+/* background-color:lightgreen; */
+`;
+
+
+const BackIconMenuWraper= styled.div`
+ display: flex;
+ gap: 10px;
+ align-items:center ;
+ margin-top: 10px;
+ margin-right: 10px;
+ width: 100%;
+ cursor: pointer;
+ padding-bottom: 1rem;
+ border-bottom: 0.5px solid  ${({ theme }) => theme.bg} ;
+/* background-color:lightgreen; */
+`;
 
 const MenuItem = styled.li`
   text-decoration: none;
   list-style: none;
   &:hover {
-    background-color: ${({ theme }) => theme.soft};
+    background-color: ${({ theme }) => theme.price};
   }
   
 `;
@@ -78,5 +104,8 @@ export default {
   Item,
   Logo,
   Menu,
-  MenuItem
+  MenuItem,
+  Navigator,
+  SideMenu,
+  BackIconMenuWraper
 };
