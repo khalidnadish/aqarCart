@@ -6,22 +6,21 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./component/utils/Theme";
 // import Loader from "./component/loader/Loader";
-import "./App.css";
+ 
 
 const Container = styled.div`
   display: flex;
-  margin: auto;
-  min-width: 300px;
-  /* width: 320px; */
   flex-direction: column;
-
+  align-items: center;
+  max-width: 1200px;
+  min-width: 300px;
+  border: 1px solid #333;
+  box-shadow: 0px 0px 15px gray;
+  width: 100%;
+  height: 100vh;
   background-color:${({ theme }) => theme.bgLighter}; 
 `;
-
-const Main = styled.div`
-  flex: 7;
-  background-color: ${({ theme }) => theme.bg};
-`;
+ 
 const BodyWrapper = styled.div`
   display: flex;
   padding: 20px 0px;

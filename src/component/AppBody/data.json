@@ -1,0 +1,23 @@
+[
+    {
+        "id": "1",
+        "type": "ايجار",
+        "header": "فيلا المريخ",
+        "img": "https://picsum.photos/200/300",
+        "detail": "تحربة",
+        "commentCounter": "18",
+        "create": "10/11/2020",
+        "seeCounter": "1200"
+        
+
+
+    },
+    { "id": "2",
+    "type": "بيع",
+    "header": "فيلا [جدة]",
+    "img": "https://picsum.photos/200/300",
+    "detail": "dfsdfsdfsds",
+    "commentCounter": "150",
+    "create": "10/10/2020",
+    "seeCounter": "15151"}
+]

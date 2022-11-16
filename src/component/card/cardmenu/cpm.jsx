@@ -9,15 +9,15 @@ const Container = styled.div`
   top: 0;
   right: 0;
   width: 50%;
-  height: 100%;
+  height: 80%;
    
   background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
   border: 0 solid;
   gap: 10px;
   /* box-shadow:0 0 0rem .5em blue; */
-  border-radius: 8px;
-  box-shadow: inset 0 0 20px -10px ;
+  border-radius: 4px;
+  box-shadow:  0 5px 20px rgba(0,0,0,0.5) ;
 
   @media only screen and (max-width: 480px) {
     width: 50%;

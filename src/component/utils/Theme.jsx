@@ -7,13 +7,14 @@ export const darkTheme = {
   nafbar:"#2e2e2e",
   price:"#AA0000",
   hrColor:"#ccc",
- 
+  textType:"black",
   HboxShadow:"0 2px 6px rgba(0,0,0, .8)"
 }
 export const lightTheme = {
   bg:"#f9f9f9",
   bgLighter:"white",
   text:"black",
+  textType:"black",
   textSoft:"#606060",
   soft:"#f5f5f5",
   price:"#350de7",

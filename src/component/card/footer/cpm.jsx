@@ -10,13 +10,15 @@ const actionWarper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
+  z-index: 100;
+  box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.soft};
   border-top: 1px solid ${({ theme }) => theme.textSoft};
 
 
   border-radius: 0px 0px 8px 8px;
-  box-shadow:${({ theme }) => theme.boxShadow};
+  /* box-shadow:${({ theme }) => theme.boxShadow}; */
 `;
 
 const footeIconWarper = styled.div`

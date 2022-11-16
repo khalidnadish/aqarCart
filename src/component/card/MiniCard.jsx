@@ -7,13 +7,13 @@ import CardMenu from "./cardmenu/CardMenu";
 
 
 
-const MiniCard = ({ title, detail, sts = "مجاني", color = "crimson" }) => {
+const MiniCard = ({ data}) => {
 const [menu,setMenu]=useState(false)
   return (
     <cpm.Container>
-      <CardHeader setMenu={setMenu}/>
-      <CardBody/>
-      <CardFooter/>
+      <CardHeader setMenu={setMenu} title={data.header} type={data.type} />
+      <CardBody image={data.img} detail={data.detail}/>
+      <CardFooter commentCounter={data.commentCounter} create={data.create} seeCounter={data.seeCounter} />
       {menu && <CardMenu menu={menu} setMenu={setMenu}/>}
     </cpm.Container>
 

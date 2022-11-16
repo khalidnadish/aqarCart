@@ -1,19 +1,16 @@
 import React from 'react'
 import cpm from "./cpm"
 import imgx from "../../../assets/img1.jpg";
-function CardBody() {
+function CardBody({image,detail}) {
   return (
     <>
     <cpm.BodyWarper>
             <cpm.imageWarper>
-                <cpm.Image src={imgx}/>
+                <cpm.Image src={image}/>
             </cpm.imageWarper>
 {/* ----------------------- */}
             <cpm.subTitleWarper>
-                بسم الله الرحمن الرحيمبسم الله الرحمن الرحيم بسم الله الرحمن الرحيم بسم
-                الله الرحمن الرحيم بسم الله الرحمن الرحيم بسم الله الرحمن الرحيم بسم
-                الله الرحمن الرحيم بسم الله الرحمن الرحيم بسم الله الرحمن الرحيم بسم
-                الله الرحمن الرحيم بسم الله الرحمن الرحيم
+               {detail}
             </cpm.subTitleWarper>
 
       </cpm.BodyWarper>

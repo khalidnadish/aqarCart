@@ -24,9 +24,10 @@ const BodyWarper = styled.div`
 const Image = styled.img`
   max-width: 100%;
   max-height: 100%;
-  height: 100%;
+  width: 100%;
+  height: auto;
   
-  object-fit: contain;
+  object-fit: cover;
 `;
 
 const imageWarper = styled.div`
@@ -34,6 +35,9 @@ const imageWarper = styled.div`
   height: 75%;
   background-color: ${({ theme }) => theme.bg};
 `;
+
+
+
 const subTitleWarper = styled.div`
   width: 100%;
   height: 25%;

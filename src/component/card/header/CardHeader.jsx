@@ -1,16 +1,16 @@
 import React from 'react'
 import headerCpm from "./headerCpm";
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
-function CardHeader({setMenu}) {
+function CardHeader({setMenu,title,type}) {
   return (
     <headerCpm.headerWarper>
         <headerCpm.iconWarper onClick={()=>{setMenu(true)}} >
           <HiOutlineMenuAlt2 />
         </headerCpm.iconWarper>
         <headerCpm.headerTitleWarper>
-          فيلا بالمحمدية
+         {title}
         </headerCpm.headerTitleWarper>
-        <headerCpm.headerTypeWarper>ايجار</headerCpm.headerTypeWarper>
+        <headerCpm.headerTypeWarper type={type}>{type}</headerCpm.headerTypeWarper>
       </headerCpm.headerWarper>
   )
 }

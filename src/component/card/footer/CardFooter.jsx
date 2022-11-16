@@ -5,10 +5,9 @@ import { AiOutlineEye } from "react-icons/ai";
 
 import { FaRegComment } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
-import { BsImage } from "react-icons/bs";
-import { FiVideo } from "react-icons/fi";
+ 
 
-function CardFooter() {
+function CardFooter({commentCounter, create, seeCounter}) {
   return (
     <cpm.actionWarper>
     {/* -------------------------------------------- */}
@@ -16,36 +15,36 @@ function CardFooter() {
       <cpm.footeIconWarper>
         <AiOutlineEye />
       </cpm.footeIconWarper>
-      <cpm.footeIconTextWarper>1500</cpm.footeIconTextWarper>
+      <cpm.footeIconTextWarper>{seeCounter}</cpm.footeIconTextWarper>
     </cpm.footeIconWithTextWarper>
     {/* -------------------------------------------- */}
     <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>
         <FaRegComment />
       </cpm.footeIconWarper>
-      <cpm.footeIconTextWarper>100</cpm.footeIconTextWarper>
+      <cpm.footeIconTextWarper>{commentCounter}</cpm.footeIconTextWarper>
     </cpm.footeIconWithTextWarper>
     {/* -------------------------------------------- */}
     <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>
         <MdDateRange />
       </cpm.footeIconWarper>
-      <cpm.footeIconTextWarper>10-10-2022</cpm.footeIconTextWarper>
+      <cpm.footeIconTextWarper>{create}</cpm.footeIconTextWarper>
     </cpm.footeIconWithTextWarper>
     {/* -------------------------------------------- */}
-    <cpm.footeIconWithTextWarper>
+    {/* <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>
         <BsImage />
       </cpm.footeIconWarper>
       <cpm.footeIconTextWarper>10</cpm.footeIconTextWarper>
-    </cpm.footeIconWithTextWarper>
+    </cpm.footeIconWithTextWarper> */}
     {/* -------------------------------------------- */}
-    <cpm.footeIconWithTextWarper>
+    {/* <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>
         <FiVideo />
       </cpm.footeIconWarper>
       <cpm.footeIconTextWarper>15</cpm.footeIconTextWarper>
-    </cpm.footeIconWithTextWarper>
+    </cpm.footeIconWithTextWarper> */}
   </cpm.actionWarper>
   )
 }
