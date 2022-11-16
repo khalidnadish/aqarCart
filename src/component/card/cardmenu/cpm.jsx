@@ -20,8 +20,8 @@ const Container = styled.div`
   box-shadow: inset 0 0 20px -10px ;
 
   @media only screen and (max-width: 480px) {
-    width: 100%;
-    justify-content: center;
+    width: 50%;
+     
   }
 `;
 

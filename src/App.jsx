@@ -12,6 +12,7 @@ const Container = styled.div`
   display: flex;
   margin: auto;
   min-width: 300px;
+  /* width: 320px; */
   flex-direction: column;
 
   background-color:${({ theme }) => theme.bgLighter}; 

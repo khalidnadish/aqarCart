@@ -33,6 +33,12 @@ const Item = styled.div`
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
+  @media only screen and (max-width: 420px) {
+   width:100%;
+   align-items: center;
+  
+
+  }
 `;
 const Logo = styled.div`
   display: flex;
@@ -53,7 +59,9 @@ display: flex;
 justify-content: space-evenly;
 align-items: center;
 flex:7;
-
+@media only screen and (max-width: 480px) {
+   display: none;
+  }
 `;
 
 
@@ -63,9 +71,7 @@ const MenuItem = styled.li`
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
-  @media only screen and (max-width: 480px) {
-   display: none;
-  }
+  
 `;
 
 function AppHeader({darkMode,setDarkMode}) {
