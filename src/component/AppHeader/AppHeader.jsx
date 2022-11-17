@@ -7,7 +7,9 @@ import Style from "./AppHeeaderStyle";
 // import Sidemenu from "./Sidemenu";
 import { FiPhoneCall } from "react-icons/fi";
 import { MdOutlineLocalOffer } from "react-icons/md";
+import { MdOutlineContactPhone } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
+
 
 function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
   return (
@@ -34,10 +36,10 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
           <Style.MenuTitle>العروض</Style.MenuTitle>
         </Style.MenuLink>
         {/*  --------------------------------------------*/}
-        {/* <Style.MenuItem>
-          <FiPhoneCall />
+        <Style.MenuLink to="/contact">
+          <MdOutlineContactPhone />
           <Style.MenuTitle>تواصل</Style.MenuTitle>
-        </Style.MenuItem> */}
+        </Style.MenuLink>
         {/*  --------------------------------------------*/}
         <Style.MenuItem onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? <MdModeNight /> : <MdLightMode />}

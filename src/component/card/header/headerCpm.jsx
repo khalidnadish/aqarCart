@@ -44,12 +44,13 @@ const headerTypeWarper = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-
+ 
   width: 30%;
   height: 30px;
   /* background-color:${({ theme }) => theme.soft}; */
-  background-color:${({ type }) => type ==="ايجار" ? "gold":"lightgreen"} ;
-  color:${({ theme }) => theme.textType};
+  background-color:${({ type }) => type ==="ايجار" ? "gold":"crimson"} ;
+  color:${({ type }) => type ==="ايجار" ? "black":"white"} ;
+   
   border-radius: 8px;
   font-weight: bolder;
  

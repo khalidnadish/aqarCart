@@ -7,7 +7,9 @@ const BodyWarper = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 100%;
+  width: 95%;
+  margin: auto;
+  margin-top: 1rem;
   max-height:  100%;
   height:  calc(100vh - 120px);
   color: ${({ theme }) => theme.text};
@@ -29,11 +31,13 @@ const ContentWarper = styled.div`
 const HeroImageWarper = styled.div`
   height: 50%;
   width: 100%;
+  padding: .7rem;
   /* background-color: lightgreen; */
   
 `;
 
 const HeroTextWarper = styled.div`
+padding: .2rem;
   height: 50%;
   width: 100%;
 
@@ -65,6 +69,7 @@ const imageWarper = styled.div`
 const HeroTitleHeader = styled.h1`
 background-color:${({ theme }) => theme.bg};
 text-align: center;
+
 `;
 
 const HeroSubTitleWraper= styled.div`
@@ -73,6 +78,8 @@ overflow: auto;
 /* margin : 1rem; */
 height: 80%;
 padding: 1rem;
+margin-top:.5rem ;
+border:1px solid ${({ theme }) => theme.soft};
 
 `;
 const HeroSubTitle = styled.p`

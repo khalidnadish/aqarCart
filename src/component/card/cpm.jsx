@@ -10,7 +10,7 @@ const Container = styled.div`
   box-shadow:${({ theme }) => theme.boxShadow};
   border-radius: 8px;
   border: 1px solid;
-  border-color:${({ type }) => type ==="ايجار" ? "gold":"lightgreen"} ;
+  border-color:${({ type }) => type ==="ايجار" ? "gold":"crimson"} ;
   background-color:${({ theme }) => theme.bg};
   
   @media only screen and (max-width: 500px) {

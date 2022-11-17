@@ -83,6 +83,10 @@ h1{
 p{
   font-size: clamp(.8rem, 1rem + 10vw,1.1rem);
 }
+.Toastify__toast-body { 
+  font-family: 'Cairo';
+  font-size: .8rem;
+ }
 
   
 

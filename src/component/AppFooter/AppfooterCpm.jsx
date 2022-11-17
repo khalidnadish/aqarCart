@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { IoLogoWhatsapp } from "react-icons/io";
 const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -41,8 +42,36 @@ const MenuLink = styled(Link)`
   }
 `;
 
+const Wa=styled(IoLogoWhatsapp)`
+
+color: lightgreen;
+/* background-color:white; */
+stroke: 1;
+  
+`
+
+
+
+const PhoneMenuLink =styled.a`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  width: 100%;
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  list-style: none;
+  padding-bottom: 5px;
+  color: ${({ theme }) => theme.text};
+  &:hover {
+    border-bottom: 3px solid;
+  }
+`;
+
 export default {
   Container,
   IconWarper,
   MenuLink,
+  PhoneMenuLink,
+  Wa
 };

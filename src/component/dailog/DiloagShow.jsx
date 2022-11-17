@@ -23,19 +23,23 @@ function DiloagShow({
           sx={{
             display: "flex",
             justifyContent: "space-between",
+            alignItems: "center",
             m: 0,
             px: 2,
             py: 1,
+            height:"30px",
             bgcolor: titleColor,
-            borderTop: "3px solid #ccc",
+            // borderTop: "3px solid #ccc",
+            
           }}
         >
           <Typography
             variant="body1"
             sx={{
-              fontFamily: "Noto Kufi Arabic, sans-serif",
-              fontWeight: "400",
+              fontFamily:"Cairo",
+              fontWeight: "200",
               color: "background.paper",
+              fontSize:".8rem"
             }}
             px={2}
           >
@@ -48,8 +52,8 @@ function DiloagShow({
               minWidth: 0,
               py: 0.3,
               m: 0,
-              width: "20px",
-              height: "25px",
+              width: "15px",
+              height: "20px",
               borderRadius: "4px",
             }}
             variant="contained"
@@ -63,12 +67,16 @@ function DiloagShow({
           sx={{
             display: "flex",
             flexDirection: "column",
-            padding: "15px",
+            // padding: "15px",
             bgcolor: bodyColor,
-            borderBottom: "4px solid #ccc",
+            padding: "0",
+            margin: "0",
+            width: "100%",
+            height: "100%",
+            overflow: "auto",
           }}
         >
-          <Box sx={{ my: 2, height: "50%" }}>{children}</Box>
+          <Box sx={{overflow:"auto"}}>{children}</Box>
         </DialogContent>
       </Dialog>
     </>
