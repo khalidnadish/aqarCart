@@ -12,9 +12,10 @@ const BodyWarper = styled.div`
   /* gap:8px; */
   width: 100%;
   height:300px;
+  /* overflow: hidden; */
   
   color: ${({ theme }) => theme.text};
-  background-color:  ${({ theme }) => theme.soft};
+  /* background-color:  ${({ theme }) => theme.soft}; */
    
   
 `;
@@ -31,8 +32,10 @@ const Image = styled.img`
 `;
 
 const imageWarper = styled.div`
-  width: 100%;
-  height: 75%;
+  min-width: 300px;
+  min-height: 50%;
+  overflow: hidden;
+  
   background-color: ${({ theme }) => theme.bg};
 `;
 
@@ -40,12 +43,14 @@ const imageWarper = styled.div`
 
 const subTitleWarper = styled.div`
   width: 100%;
-  height: 25%;
+  height: 50%;
   background-color: ${({ theme }) => theme.bg};
   color: ${({ theme }) => theme.text};
   font-size: 0.9rem;
-  padding: 0.5em;
-  overflow-y: auto;
+  padding: 1em;
+  overflow: auto;
+  word-wrap: break-word;
+  
 `;
 
 export default {

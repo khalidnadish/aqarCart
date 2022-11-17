@@ -19,7 +19,7 @@ const Container = styled.div`
   border-radius: 4px;
   box-shadow:  0 5px 20px rgba(0,0,0,0.5) ;
 
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     width: 50%;
      
   }

@@ -6,16 +6,28 @@ import data from "./data.json"
 const Container=styled.div` 
 display: flex;
 flex-wrap: wrap;
+align-items:center;
+min-height:10%;
 justify-content: space-evenly;
 align-items:center;
-gap: 1rem;
+gap: 2rem;
 padding: 1em;
+overflow: auto;
+
+@supports (-webkit-touch-callout: none) and (not (translate: none)) {
+    &:not(:last-child) {
+      margin-right: 5%;
+    }
+  }
+ 
  
 
-@media only screen and (max-width: 420px) {
+@media only screen and (max-width: 500px) {
     flex-direction: column;
-    
+    /* background-color: red; */
+    overflow: auto;
     flex-wrap: nowrap;
+    justify-content: flex-start;
   }
 
 `;

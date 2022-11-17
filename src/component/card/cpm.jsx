@@ -2,16 +2,20 @@ import styled from "styled-components";
 const Container = styled.div`
   position: relative;
   min-width: 300px;
-  height: 400px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
   box-shadow:${({ theme }) => theme.boxShadow};
   border-radius: 8px;
+  border: 1px solid;
+  border-color:${({ type }) => type ==="ايجار" ? "gold":"lightgreen"} ;
   background-color:${({ theme }) => theme.bg};
-  @media only screen and (max-width: 480px) {
+  
+  @media only screen and (max-width: 500px) {
     width: 100%;
+    height: 100%;
     justify-content: center;
   }
 `;
@@ -20,7 +24,6 @@ const Image = styled.img`
   max-width: 100%;
   max-height:100% ;
   /* height: auto; */
-  vertical-align: bottom;
   object-fit: contain;
 `;
 
@@ -94,7 +97,7 @@ const ServicePrice = styled.h4`
   font-weight: bold;
   border-radius: 0px 8px 8px 0px;
   padding: 12px 8px 12px 8px;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;
@@ -106,7 +109,7 @@ const TextDetail = styled.p`
   font-weight: 300;
   line-height: 1.9rem;
   color: ${({ theme }) => theme.text};
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;
@@ -119,7 +122,7 @@ const SubTextDetail = styled.li`
   line-height: 1.9rem;
   color: ${({ theme }) => theme.text};
   width: 100%;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;

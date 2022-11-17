@@ -1,40 +1,45 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-const Container=styled.div` 
-display: flex;
-flex-wrap: wrap;
-justify-content: space-between;
-align-items:center;
-position: sticky;
-top: 0;
-width: 100%;
-gap: 1rem;
-height: 45px;
-box-shadow: ${({ theme }) => theme.HboxShadow}; 
-background-color:${({ theme }) => theme.nafbar}; 
-color: ${({ theme }) => theme.text};
-z-index: 100;
-padding-right:1rem ;
-padding-left:1rem ;
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  gap: 1rem;
+  height: 80px;
+  box-shadow: ${({ theme }) => theme.HboxShadow};
+  background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  padding: 1rem;
+  z-index: 1;
+
+  @media only screen and (max-width: 500px) {
+    /* padding: 1rem; */
+    /* height: 100vh; */
+  }
 `;
+
 const Item = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 20px;
   flex: 1;
+  width: 100%;
   cursor: pointer;
   padding: 5px 0px;
-  border-right: 1px solid ${({ theme }) => theme.text};
-
+  /* border-right: 1px solid ${({ theme }) => theme.text}; */
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  text-align: right;
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
-  @media only screen and (max-width: 420px) {
-   width:100%;
-   align-items: center;
-  
 
+  @media only screen and (max-width: 500px) {
+    display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
 `;
 const Logo = styled.div`
@@ -45,59 +50,111 @@ const Logo = styled.div`
   cursor: pointer;
   padding: 5px 0px;
   border-left: 1px solid ${({ theme }) => theme.text};
- flex:1;
+  flex: 1;
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
-`;
 
-const Menu= styled.ul`
-display: flex;
-justify-content: space-evenly;
-align-items: center;
-flex:7;
-@media only screen and (max-width: 480px) {
-   display: none;
+  @media only screen and (max-width: 500px) {
+    display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
 `;
-const Navigator= styled.div``;
 
-const SideMenu= styled.div`
-position: fixed;
-top: 35px;
-/* right: 0; */
-width: 20%;
-height:70% ;
-color: ${({ theme }) => theme.text};
-background-color: ${({ theme }) => theme.soft};
+const Menu = styled.ul`
+  display: flex;
+  justify-content: ${({ menuDir }) =>
+    menuDir === "col" ? "flex-start" : "space-evenly"};
+  align-items: center;
+  gap: 2rem;
+  margin-top: ${({ menuDir }) => (menuDir === "col" ? "1rem" : "0")};
+  flex-direction: ${({ menuDir }) => (menuDir === "col" ? "column" : "row")};
+  flex: 7;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+`;
+const Navigator = styled.div``;
 
-/* background-color:lightgreen; */
+const MenuContainer = styled.div`
+  @media only screen and (max-width: 500px) {
+    display: flex;
+  }
 `;
 
-
-const BackIconMenuWraper= styled.div`
- display: flex;
- gap: 10px;
- align-items:center ;
- margin-top: 10px;
- margin-right: 10px;
- width: 100%;
- cursor: pointer;
- padding-bottom: 1rem;
- border-bottom: 0.5px solid  ${({ theme }) => theme.bg} ;
-/* background-color:lightgreen; */
+const MenuTitle = styled.p`
+  @media only screen and (max-width: 500px) {
+    display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
+  }
 `;
 
-const MenuItem = styled.li`
-  text-decoration: none;
-  list-style: none;
+const SideMenu = styled.div`
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 35px;
+  width: 200px;
+  right: 50px;
+  height: 70%;
+  color: ${({ theme }) => theme.text};
+  background-color: ${({ theme }) => theme.soft};
+  transition: all 0.3s ease-in;
+  z-index: 2;
+  @media only screen and (max-width: 500px) {
+    /* display: none; */
+    width: 50%;
+    right: -50px;
+    /* background-color:red; */
+  }
+`;
+
+const BackIconMenuWraper = styled.div`
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 10px;
+  margin-right: 1rem;
+  width: 100%;
+  cursor: pointer;
+  padding-bottom: 1rem;
+  border-bottom: 0.5px solid ${({ theme }) => theme.bg};
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+`;
+
+const MenuItemWraper = styled.div`
+  display: flex;
+  align-items: center;
+  width: 70%;
+  gap: 0.5rem;
+  margin-right: 1rem;
   &:hover {
     background-color: ${({ theme }) => theme.price};
   }
-  
 `;
 
+const MenuItem = styled.li`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  width: 100%;
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  list-style: none;
+  padding-bottom: 5px;
+  &:hover {
+    border-bottom:3px solid ;
+  }
+ 
+`;
 
+const MenuLink = styled(Link)`
+  color: white;
+  font-size: x-large;
+  font-family: "cairo";
+  text-decoration: none;
+  margin: 10px;
+`;
 
 export default {
   Container,
@@ -107,5 +164,8 @@ export default {
   MenuItem,
   Navigator,
   SideMenu,
-  BackIconMenuWraper
+  BackIconMenuWraper,
+  MenuItemWraper,
+  MenuContainer,
+  MenuTitle,
 };

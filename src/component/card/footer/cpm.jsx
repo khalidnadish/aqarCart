@@ -10,7 +10,7 @@ const actionWarper = styled.div`
   position: absolute;
   bottom: 0;
   left: 0;
-  z-index: 100;
+  z-index: 0;
   box-shadow: 0 5px 15px 0 rgba(0,0,0,.5);
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.soft};
@@ -42,11 +42,11 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
 
 const footeIconWithTextWarper = styled.div`
-
 display: flex;
 flex-direction:column;
 justify-content: center;
 align-items: center;
+
 `;
 
 const ServicePrice = styled.h4`
@@ -61,7 +61,7 @@ const ServicePrice = styled.h4`
   font-weight: bold;
   border-radius: 0px 8px 8px 0px;
   padding: 12px 8px 12px 8px;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;
@@ -73,7 +73,7 @@ const TextDetail = styled.p`
   font-weight: 300;
   line-height: 1.9rem;
   color: ${({ theme }) => theme.text};
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;
@@ -86,7 +86,7 @@ const SubTextDetail = styled.li`
   line-height: 1.9rem;
   color: ${({ theme }) => theme.text};
   width: 100%;
-  @media only screen and (max-width: 480px) {
+  @media only screen and (max-width: 500px) {
     font-size: 14px;
   }
 `;

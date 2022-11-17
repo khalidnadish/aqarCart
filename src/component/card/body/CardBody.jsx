@@ -1,6 +1,6 @@
 import React from 'react'
 import cpm from "./cpm"
-import imgx from "../../../assets/img1.jpg";
+// import imgx from "../../../assets/img1.jpg";
 function CardBody({image,detail}) {
   return (
     <>

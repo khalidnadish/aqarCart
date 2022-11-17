@@ -5,6 +5,9 @@ import AppBody from "./component/AppBody/AppBody";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./component/utils/Theme";
+import Sidemenu from './component/AppHeader/Sidemenu';
+import Contact from "./pages/contact/Contact"
+import About from "./pages/about/About"
 // import Loader from "./component/loader/Loader";
  
 
@@ -12,50 +15,43 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 1200px;
+  max-width: 100vw;
   min-width: 300px;
-  border: 1px solid #333;
-  box-shadow: 0px 0px 15px gray;
-  width: 100%;
-  height: 100vh;
+  width: 99%;
+  max-height: 100vh;
   background-color:${({ theme }) => theme.bgLighter}; 
 `;
  
 const BodyWrapper = styled.div`
   display: flex;
-  padding: 20px 0px;
-  @media (max-width: 400px) {
+  width: 100%;
+  background-color:${({ theme }) => theme.bgLighter}; 
+
+  @media (max-width: 500px) {
     padding: 10px 20px;
     flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+   
   }
 `;
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
+  const [open,setOpen]=useState(false)
 
   return (
     <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
       <Container>
         <BrowserRouter>
-          <AppHeader darkMode={darkMode} setDarkMode={setDarkMode} />
+          <AppHeader open={open} setOpen={setOpen} darkMode={darkMode} setDarkMode={setDarkMode} />
           <BodyWrapper>
           <Suspense fallback={<h1>..loading</h1>}>
               <Routes>
                 <Route path="/">
                   <Route index element={<AppBody />} />
-                  {/* <Route path="signin" element={<SignIn />} /> */}
-                  {/* <Route path="videopage" element={<Videopage />} />
-                  <Route path="imagepage" element={<Imagepage />} />
-                  <Route path="complainepage" element={<Complainepage />} />
-                  <Route path="freedaypage" element={<Freedaypage />} />
-                  <Route path="locationpage" element={<Locationpage />} />
-                  <Route path="momentspage" element={<Momentspage />} />
-                  <Route path="offerpage" element={<Offerpage />} />
-                  <Route path="spesficationpage" element={<Spesficationpage />} />
-                  <Route path="rankingpage" element={<Rankingpage />} /> */}
-                  
-                  
-                  
+                  <Route path="/about" element={<About />} />
+                  <Route path="/contact" element={<Contact />} />
                 </Route>
               </Routes>
               </Suspense>
@@ -65,6 +61,7 @@ function App() {
           </BodyWrapper>
           <AppFooter />
         </BrowserRouter>
+        {open   && <Sidemenu open={open} setOpen={setOpen} darkMode={darkMode} setDarkMode={setDarkMode}/> }
       </Container>
     </ThemeProvider>
   );

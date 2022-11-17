@@ -1,43 +1,60 @@
-import React,{useState} from 'react'
-import { MdLightMode } from 'react-icons/md';
-import { MdModeNight } from 'react-icons/md';
-import Style from "./AppHeeaderStyle"
-import { AiOutlineMenuFold } from 'react-icons/ai';
-import { AiOutlineMenuUnfold } from 'react-icons/ai';
-import Sidemenu from './Sidemenu';
+import React, { useState } from "react";
+import { MdLightMode } from "react-icons/md";
+import { MdModeNight } from "react-icons/md";
+import Style from "./AppHeeaderStyle";
+// import { AiOutlineMenuFold } from "react-icons/ai";
+// import { AiOutlineMenuUnfold } from "react-icons/ai";
+// import Sidemenu from "./Sidemenu";
+import { FiPhoneCall } from "react-icons/fi";
+import { MdOutlineLocalOffer } from "react-icons/md";
+import { AiOutlineHome } from "react-icons/ai";
 
-
-
-function AppHeader({darkMode,setDarkMode}) {
-  const [open,setOpen]=useState(false)
+function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
   return (
     <Style.Container>
-      <Style.Navigator onClick={() => {
-          
+      {/* <Style.Navigator
+        onClick={() => {
           setOpen(true);
-        }}>
-      <AiOutlineMenuFold/>
-      </Style.Navigator>
+        }}
+      >
+        <AiOutlineMenuFold />
+      </Style.Navigator> */}
 
-
-
+      {/* <Style.MenuContainer> */}
       <Style.Logo>logo</Style.Logo>
       <Style.Menu>
-        <Style.MenuItem>الرئسية</Style.MenuItem>
-        <Style.MenuItem>العروض</Style.MenuItem>
-        <Style.MenuItem>تواصل</Style.MenuItem>
+        {/*  --------------------------------------------*/}
+        <Style.MenuItem>
+          <AiOutlineHome />
+          <Style.MenuTitle>الرئسية</Style.MenuTitle>
+        </Style.MenuItem>
+        {/*  --------------------------------------------*/}
+        <Style.MenuItem>
+          <MdOutlineLocalOffer />
+          <Style.MenuTitle>العروض</Style.MenuTitle>
+        </Style.MenuItem>
+        {/*  --------------------------------------------*/}
+        {/* <Style.MenuItem>
+          <FiPhoneCall />
+          <Style.MenuTitle>تواصل</Style.MenuTitle>
+        </Style.MenuItem> */}
+        {/*  --------------------------------------------*/}
+        <Style.MenuItem onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? <MdModeNight /> : <MdLightMode />}
+          <Style.MenuTitle>{darkMode ?<>لنهاري</>  :<>اليلي</> }</Style.MenuTitle>
+         </Style.MenuItem>
       </Style.Menu>
-        <Style.Item onClick={() => setDarkMode(!darkMode)}>
-          {darkMode ? <MdModeNight/> : <MdLightMode/>}
-          {darkMode ? <Style.MenuItem>النهاري</Style.MenuItem>  : <Style.MenuItem>اليلي</Style.MenuItem>} 
-        </Style.Item>
-
-
-
-    {open   && <Sidemenu open={open} setOpen={setOpen}/> }
-
-    </Style.Container >
-  )
+      {/* 
+      <Style.Item onClick={() => setDarkMode(!darkMode)}>
+        {darkMode ? <MdModeNight /> : <MdLightMode />}
+        {darkMode ? (
+          <Style.MenuItem>النهاري</Style.MenuItem>
+        ) : (
+          <Style.MenuItem>اليلي</Style.MenuItem>
+        )}
+      </Style.Item>  */}
+    </Style.Container>
+  );
 }
 
-export default AppHeader
+export default AppHeader;

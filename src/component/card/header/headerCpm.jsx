@@ -17,6 +17,7 @@ const headerWarper = styled.div`
   box-shadow:${({ theme }) => theme.boxShadow};
   padding-bottom: 8px;
   padding-top: 8px;
+  border-radius: 8px;
   
   
 `;
