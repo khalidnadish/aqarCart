@@ -1,0 +1,48 @@
+import styled from "styled-components";
+import { Link } from "react-router-dom";
+const Container = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  max-height: 60px;
+  height: 60px;
+  position: fixed;
+  bottom: 0;
+  padding: 1rem;
+  width: 100%;
+  gap: 1rem;
+
+  box-shadow: ${({ theme }) => theme.boxShadow};
+  background-color: ${({ theme }) => theme.soft};
+  color: ${({ theme }) => theme.text};
+  z-index: 1;
+`;
+
+const IconWarper = styled.div`
+  text-align: center;
+  background-color: ${({ theme }) => theme.bgLighter};
+  width: 100%;
+  cursor: pointer;
+`;
+
+const MenuLink = styled(Link)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  width: 100%;
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  list-style: none;
+  padding-bottom: 5px;
+  color: ${({ theme }) => theme.text};
+  &:hover {
+    border-bottom: 3px solid;
+  }
+`;
+
+export default {
+  Container,
+  IconWarper,
+  MenuLink,
+};
