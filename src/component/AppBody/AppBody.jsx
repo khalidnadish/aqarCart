@@ -11,14 +11,9 @@ min-height:10%;
 justify-content: space-evenly;
 align-items:center;
 gap: 2rem;
+height:  calc(100vh - 120px);
 padding: 1em;
 overflow: auto;
-
-@supports (-webkit-touch-callout: none) and (not (translate: none)) {
-    &:not(:last-child) {
-      margin-right: 5%;
-    }
-  }
  
  
 

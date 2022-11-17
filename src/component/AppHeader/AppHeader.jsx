@@ -24,15 +24,15 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
       <Style.Logo>logo</Style.Logo>
       <Style.Menu>
         {/*  --------------------------------------------*/}
-        <Style.MenuItem>
+        <Style.MenuLink to="/about">
           <AiOutlineHome />
           <Style.MenuTitle>الرئسية</Style.MenuTitle>
-        </Style.MenuItem>
+        </Style.MenuLink>
         {/*  --------------------------------------------*/}
-        <Style.MenuItem>
+        <Style.MenuLink to="/">
           <MdOutlineLocalOffer />
           <Style.MenuTitle>العروض</Style.MenuTitle>
-        </Style.MenuItem>
+        </Style.MenuLink>
         {/*  --------------------------------------------*/}
         {/* <Style.MenuItem>
           <FiPhoneCall />

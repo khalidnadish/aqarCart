@@ -5,11 +5,13 @@ const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-height: 60px;
+  height: 60px;
   position: sticky;
   top: 0;
   width: 100%;
   gap: 1rem;
-  height: 80px;
+  
   box-shadow: ${({ theme }) => theme.HboxShadow};
   background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
@@ -149,11 +151,19 @@ const MenuItem = styled.li`
 `;
 
 const MenuLink = styled(Link)`
-  color: white;
-  font-size: x-large;
-  font-family: "cairo";
+ display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
   text-decoration: none;
-  margin: 10px;
+  width: 100%;
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  list-style: none;
+  padding-bottom: 5px;
+  color: ${({ theme }) => theme.text};
+  &:hover {
+    border-bottom:3px solid ;
+  }
 `;
 
 export default {
@@ -168,4 +178,5 @@ export default {
   MenuItemWraper,
   MenuContainer,
   MenuTitle,
+  MenuLink
 };
