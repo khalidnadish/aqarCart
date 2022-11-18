@@ -89,7 +89,7 @@ flex-wrap: wrap;
 
 
 const InputText = styled.input`
-  display: block;
+  display:  block;
   width: 100%;
   
   font-family: "CairoRegular";
@@ -97,6 +97,67 @@ const InputText = styled.input`
 `;
 
 
+
+
+
+const PriceInputText = styled.input`
+  display: ${({reqFlag})=> reqFlag===3 ? "block": "none"};
+  color: ${({reqFlag})=> reqFlag===3 ? "red": "green"};
+  width: 100%;
+  
+  font-family: "CairoRegular";
+  ${shareStyle}
+`;
+
+
+const RequstTypeWrper= styled.div`
+  display: "flex";
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+                
+
+
+
+
+`;
+
+
+const LabelText = styled.div`
+ padding: 8px 14px;
+ font-size: 14px;
+ font-family: "CairoRegular";
+ color: #fff;
+ width:100%;
+ text-align: center;
+ background: #009578;
+ cursor:pointer;
+  
+ &:not(:last-of-type){
+  border-right: 1px solid #006B56;
+ }
+ &:not(:first-of-type){
+  border-right: 1px solid #006B56;
+ }
+
+ &:hover{
+  background-color:red;
+ }
+
+   
+`;
+
+
+
+
+const RadioInputText = styled.div`
+  display: none;
+  
+ 
+`;
 
 const Btn = styled.button`
   display: block;
@@ -173,13 +234,18 @@ const TextData = styled.p`
   padding:.3rem;
   text-align: center;
   margin: auto;
-  
-  
   font-family: 'TajawalBold';
-  
 `;
 
+ const RadioDiv=styled.div`
+ width: 100%;
+ display: inline-flex;
+ overflow: hidden;
+ border-radius: 15px;
+ box-shadow: 0 0 5px rgba(0,0,0,0.25) inset;
  
+ `;
+
 
 const Text = styled.p`
  display:block;
@@ -220,5 +286,11 @@ export default {
   Btn,
   FieldSet,
   FormStyle,
-  HeaderTypeWarper
+  HeaderTypeWarper,
+  RadioInputText,
+  RadioDiv,
+  LabelText,
+  RequstTypeWrper,
+  PriceInputText
+
 };
