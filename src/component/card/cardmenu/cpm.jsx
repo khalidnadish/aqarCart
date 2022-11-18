@@ -62,8 +62,67 @@ const MenuItem = styled.div`
     color: ${({ theme }) => theme.price};
   }
 `;
+
+
+
+const DailogContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  gap: 5px;
+  padding: 1rem;
+  border:3px solid  ${({ theme }) => theme.soft};;
+  @media only screen and (max-width: 500px) {
+    width: 100%;
+  }
+`;
+
+
+const Text = styled.p`
+  font-size: 1rem;
+  /* padding: .5rem; */
+  background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  &:hover{
+    color: ${({ theme }) => theme.price};
+  }
+`;
+
+
+const InputText = styled.input`
+  font-size: 1rem;
+   
+   
+  /* color: ${({ theme }) => theme.text}; */
+  
+`;
+
+
+
+const TextData = styled.p`
+  font-size: 1rem;
+  /* padding: .5rem; */
+  background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  &:hover{
+    color: ${({ theme }) => theme.price};
+  }
+`;
+
 const MenuIcon = styled.div`
   background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  
+`;
+
+
+const ItemTxtWraper = styled.div`
+display: flex;
+align-items: center;
+gap:1rem;
+  background-color: ${({ theme }) => theme.soft};
   color: ${({ theme }) => theme.text};
   
 `;
@@ -74,4 +133,9 @@ export default {
   MenuHeaderItemWrper,
   MenuItem,
   MenuIcon,
+  Text,
+  DailogContainer,
+  TextData,
+  ItemTxtWraper,
+  InputText
 };

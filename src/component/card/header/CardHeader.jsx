@@ -4,12 +4,14 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 function CardHeader({setMenu,title,type}) {
   return (
     <headerCpm.headerWarper>
-        <headerCpm.iconWarper onClick={()=>{setMenu(true)}} >
+        {/* <headerCpm.iconWarper onClick={()=>{setMenu(true)}} >
           <HiOutlineMenuAlt2 />
-        </headerCpm.iconWarper>
+        </headerCpm.iconWarper> */}
+
         <headerCpm.headerTitleWarper>
          {title}
         </headerCpm.headerTitleWarper>
+        
         <headerCpm.headerTypeWarper type={type}>{type}</headerCpm.headerTypeWarper>
       </headerCpm.headerWarper>
   )

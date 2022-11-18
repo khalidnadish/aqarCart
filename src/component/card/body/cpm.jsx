@@ -9,15 +9,9 @@ const BodyWarper = styled.div`
   flex-direction: column;
    position: absolute;
    top: 50px;
-  /* gap:8px; */
   width: 100%;
   height:300px;
-  /* overflow: hidden; */
-  
   color: ${({ theme }) => theme.text};
-  /* background-color:  ${({ theme }) => theme.soft}; */
-   
-  
 `;
 
 
@@ -27,7 +21,6 @@ const Image = styled.img`
   max-height: 100%;
   width: 100%;
   height: auto;
-  
   object-fit: cover;
 `;
 
@@ -35,11 +28,8 @@ const imageWarper = styled.div`
   min-width: 300px;
   min-height: 50%;
   overflow: hidden;
-  
   background-color: ${({ theme }) => theme.bg};
 `;
-
-
 
 const subTitleWarper = styled.div`
   width: 100%;
@@ -50,7 +40,7 @@ const subTitleWarper = styled.div`
   padding: 1em;
   overflow: auto;
   word-wrap: break-word;
-  
+  font-family: "TajawalRegular";
 `;
 
 export default {

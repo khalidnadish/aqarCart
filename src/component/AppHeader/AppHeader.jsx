@@ -43,7 +43,7 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
         {/*  --------------------------------------------*/}
         <Style.MenuItem onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? <MdModeNight /> : <MdLightMode />}
-          <Style.MenuTitle>{darkMode ?<>لنهاري</>  :<>اليلي</> }</Style.MenuTitle>
+          <Style.MenuTitle>{darkMode ?<>نهاري</>  :<>ليلي</> }</Style.MenuTitle>
          </Style.MenuItem>
       </Style.Menu>
       {/* 

@@ -27,6 +27,25 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
+
+const ActionBtn = styled.button`
+position: absolute;
+top: 10px;
+right: 10px;
+border-radius:50%;
+width:25px;
+height:25px;
+background-color: red;
+box-shadow: 0px 0px 20px rgba(16, 172, 42, 0.2);
+z-index: 3;
+border: 0;
+outline:none;
+cursor: pointer;
+&:hover {
+  background-color: gold;
+}
+
+`;
 const imageWarper = styled.div`
   width: 100%;
   height: 50%;
@@ -139,4 +158,5 @@ export default {
   footeIconWarper,
   footeIconTextWarper,
   footeIconWithTextWarper,
+  ActionBtn
 };

@@ -18,7 +18,7 @@ function DiloagShow({
 }) {
   return (
     <>
-      <Dialog open={open} onClose={toggle}>
+      <Dialog   sx={{width:"100%"}}  open={open} onClose={toggle}>
         <DialogTitle
           sx={{
             display: "flex",
@@ -36,10 +36,9 @@ function DiloagShow({
           <Typography
             variant="body1"
             sx={{
-              fontFamily:"Cairo",
-              fontWeight: "200",
+              fontFamily:"CairoBold",
               color: "background.paper",
-              fontSize:".8rem"
+              fontSize:"1rem"
             }}
             px={2}
           >

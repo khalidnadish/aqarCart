@@ -11,6 +11,7 @@ const Container = styled.div`
   top: 0;
   width: 100%;
   gap: 1rem;
+  font-family: "CairoBold";
   
   box-shadow: ${({ theme }) => theme.HboxShadow};
   background-color: ${({ theme }) => theme.nafbar};
@@ -85,6 +86,7 @@ const MenuContainer = styled.div`
 `;
 
 const MenuTitle = styled.p`
+ font-family: "TajawalBold";
   @media only screen and (max-width: 500px) {
     display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
@@ -161,6 +163,7 @@ const MenuLink = styled(Link)`
   list-style: none;
   padding-bottom: 5px;
   color: ${({ theme }) => theme.text};
+    
   &:hover {
     border-bottom:3px solid ;
   }

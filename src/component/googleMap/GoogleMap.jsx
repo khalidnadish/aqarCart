@@ -17,7 +17,7 @@ const copyBtn1 = styled.button`
   outline: none;
   padding: 0.5rem;
   min-width: 5rem;
-  font-family: "Cairo";
+  font-family: 'Cairo', sans-serif;
   border-radius: 18px;
   border: none;
   /* background-color: ${({ iscopy }) => iscopy  ? "gold":"lightgreen"} ; */

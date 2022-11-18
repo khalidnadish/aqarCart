@@ -11,6 +11,7 @@ import About from "./pages/about/About";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+
 // import Loader from "./component/loader/Loader";
 
 const Container = styled.div`
