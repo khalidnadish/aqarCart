@@ -8,7 +8,7 @@ import { darkTheme, lightTheme } from "./component/utils/Theme";
 import Sidemenu from "./component/AppHeader/Sidemenu";
 import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
@@ -79,7 +79,7 @@ function App() {
       <ToastContainer
        
         position="top-right"
-        autoClose={3000}
+        autoClose={5000}
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick

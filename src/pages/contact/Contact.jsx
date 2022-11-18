@@ -1,47 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import GoogleMap from "../../component/googleMap/GoogleMap";
 import styled from "styled-components";
+import {  toast } from "react-toastify";
 import cpm from "./ContactCpm";
 // import data from "./data.json";
 
-const Btn = styled.button`
-  outline: none;
-  padding: 0.5rem;
-  min-width: 5rem;
-  font-family: 'Cairo', sans-serif;
-  border-radius: 8px;
-  border: none;
-  background-color: ${({ theme }) => theme.nafbar};
-  color: ${({ theme }) => theme.text};
-`;
 
-function Contact() {
+function Contact({ lat = 0.0, att = 0.001,mobile="0500000000",adr="جدة الممكة العلربية السعودية ",email="devnadish.gmail.com" }) {
+  const [iscopy, setIscopy] = useState(false);
+  const handleCopy = () => {
+    navigator.clipboard.writeText(`${lat},${att}`);
+    setIscopy(!iscopy);
+    toast.success("تم حفظ الاحداثيات انسخها لجوجل ماب  لتصل الينا بالسلامة")
+
+  };
   return (
     <cpm.BodyWarper>
-      <GoogleMap />
-      <Callme />
-      adreess - google map - telephone - whatsup mailme
+       <cpm.FlexDiv direction="col">
+      <cpm.Txt>رقم الجوال : {mobile}</cpm.Txt>
+      <cpm.Txt>العنوان : {adr}</cpm.Txt>
+      <cpm.Txt>الايميل : {email}</cpm.Txt>
+      </cpm.FlexDiv>
+      
+      <cpm.HeroImageWarper>
+        <cpm.Image src="./img/map1.jpg" />
+       
+      </cpm.HeroImageWarper>
+    <cpm.FlexDiv direction="row">
+      <cpm.Btn iscopy={iscopy} onClick={handleCopy}>
+          {iscopy ? <>تم النسخ </> : <> نسخ</>}
+        </cpm.Btn>
+        <cpm.Txt>خط الطول : {lat}</cpm.Txt>
+        <cpm.Txt>خط العرض : {att}</cpm.Txt>
+        </cpm.FlexDiv>
     </cpm.BodyWarper>
   );
 }
 
 export default Contact;
-
-const Callme = () => {
-
-  const makecall=() => {
-    return (
-    <>
-    <a href="tel:055125230">fgf</a>
-    </>
-    )
-
-  }
-
-
-  return (
-    <>
-      <Btn  ><a href="tel:0502699023">call</a></Btn>
-    </>
-  );
-};

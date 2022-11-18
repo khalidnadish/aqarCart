@@ -16,21 +16,48 @@ const BodyWarper = styled.div`
 
 const ContentWarper = styled.div`
   display: flex;
-  
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #777;
   height: 100%;
   width: 100%;
-  
 `;
 
 const HeroImageWarper = styled.div`
   height: 50%;
   width: 100%;
-  /* background-color: lightgreen; */
+  margin: 1rem;
+`;
+
+
+const Txt = styled.p`
+  outline: none;
+  padding: 0.2rem 1rem;
+font-size:1rem;
+  min-width: 5rem;
+  font-family: "CairoBold";
+  border-radius: 8px;
+  border: none;
+  background-color: ${({ theme }) => theme.bg};
+  color: ${({ theme }) => theme.text};
   
+  @media (max-width: 500px) {
+    font-size:.8rem;
+  }
+`;
+
+const Btn = styled.button`
+  outline: none;
+  padding: 0.2rem 1rem;
+  min-width: 5rem;
+  font-family: "CairoBold";
+  border-radius: 8px;
+  border: none;
+  background-color: ${({ theme }) => theme.nafbar};
+  color: ${({ theme }) => theme.text};
+  
+  cursor: pointer;
 `;
 
 const HeroTextWarper = styled.div`
@@ -47,10 +74,15 @@ const Image = styled.img`
   object-fit: fill;
 `;
 
+const FlexDiv = styled.div`
+display: flex;
+width: 100%;
 
-
-
-
+flex-direction: ${({direction})=>direction==="row" ? "row":"column"};
+/* justify-content: flex-start; */
+align-items: flex-start;
+gap:1rem;
+`;
 
 const imageWarper = styled.div`
   min-width: 300px;
@@ -97,6 +129,8 @@ export default {
   HeroImageWarper,
 HeroTextWarper,
 HeroSubTitle,
- HeroSubTitleWraper
-
+ HeroSubTitleWraper,
+ Txt,
+ Btn,
+ FlexDiv
 };
