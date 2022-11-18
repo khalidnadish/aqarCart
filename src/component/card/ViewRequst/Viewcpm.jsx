@@ -32,6 +32,7 @@ const shareStyle = css`
   margin: 5px 0 5px 0;
   padding: 10px;
   box-sizing: border-box;
+  font-family: "TajawalBold";
 `;
 
 const themcolor = css`
@@ -117,12 +118,6 @@ const RequstTypeWrper= styled.div`
   justify-content: center;
   align-items: center;
   text-align: center;
-  
-                
-
-
-
-
 `;
 
 
@@ -291,6 +286,8 @@ export default {
   RadioDiv,
   LabelText,
   RequstTypeWrper,
-  PriceInputText
+  PriceInputText,
+  InputTextarea
+
 
 };

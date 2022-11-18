@@ -73,6 +73,8 @@ function ViewRequst({ data }) {
             <cpm.InputText placeholder="اليوم" reqFlag={reqFlag} />
           </cpm.FieldSet>
           <cpm.PriceInputText placeholder="السعر"  reqFlag={reqFlag}/>
+          <cpm.InputTextarea placeholder="ملاحضات"  reqFlag={reqFlag}/>
+
         </cpm.FormStyle>
         <cpm.Btn>ارسال</cpm.Btn>
       </cpm.FormContainer>
