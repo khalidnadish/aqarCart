@@ -41,6 +41,12 @@ const MenuLink = styled(Link)`
     border-bottom: 3px solid;
   }
 `;
+const ImageIcon = styled.svg`
+
+
+`;
+
+
 
 const Wa=styled(IoLogoWhatsapp)`
 
@@ -73,5 +79,6 @@ export default {
   IconWarper,
   MenuLink,
   PhoneMenuLink,
-  Wa
+  Wa,
+  ImageIcon
 };

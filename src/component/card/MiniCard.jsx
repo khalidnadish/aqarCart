@@ -6,6 +6,8 @@ import CardBody from "./body/CardBody";
 import CardMenu from "./cardmenu/CardMenu";
 import DiloagShow from  "../dailog/DiloagShow"
 import ViewRequst from "../card/ViewRequst/ViewRequst"
+import { RiCustomerServiceLine } from "react-icons/ri";
+
 
 
 const MiniCard = ({ data}) => {
@@ -16,27 +18,29 @@ const [open, setOpen] = useState(false);
 
   return (
     <>
-    <cpm.Container type={data.type}>
-    <cpm.ActionBtn onClick={()=>setOpen(true)}/>
-      <CardHeader setMenu={setMenu} title={data.header} type={data.type} />
-      <CardBody image={data.img} detail={data.detail}/>
-      <CardFooter commentCounter={data.commentCounter} create={data.create} seeCounter={data.seeCounter} />
-      {menu && <CardMenu menu={menu} setMenu={setMenu}/>}
-    </cpm.Container>
+      <cpm.Container type={data.type}>
+        <cpm.ActionBtn onClick={() => setOpen(true)}>
+          <RiCustomerServiceLine color="green" fontSize={"1.7rem"}/>
+        </cpm.ActionBtn>
+        <CardHeader setMenu={setMenu} title={data.header} type={data.type} />
+        <CardBody image={data.img} detail={data.detail} />
+        <CardFooter
+          commentCounter={data.commentCounter}
+          create={data.create}
+          seeCounter={data.seeCounter}
+        />
+        {menu && <CardMenu menu={menu} setMenu={setMenu} />}
+      </cpm.Container>
 
-    {open && (
+      {open && (
         <DiloagShow
           open={open}
           toggle={setOpen}
           title={"يسعدني خدمتك"}
-          children={<ViewRequst data={data}/>}
+          children={<ViewRequst data={data} />}
         />
       )}
     </>
-
-     
-
-
   );
 };
 

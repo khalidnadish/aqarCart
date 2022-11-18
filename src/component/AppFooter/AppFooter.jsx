@@ -1,6 +1,7 @@
 import React from "react";
 import cpm from "./AppfooterCpm";
 
+
 import { AiFillPhone } from "react-icons/ai";
 import { GrSnapchat } from "react-icons/gr";
 import { IoLogoWhatsapp } from "react-icons/io";
@@ -29,6 +30,7 @@ function AppFooter() {
         <GrSnapchat color="yellow"/>
       </cpm.IconWarper>
 
+          <cpm.ImageIcon src={"./icons/call.svg"}/>
       <cpm.IconWarper onClick={copyInstgram}>
         <AiFillInstagram color="#e00bf3"/>
       </cpm.IconWarper>

@@ -30,12 +30,14 @@ const Image = styled.img`
 
 const ActionBtn = styled.button`
 position: absolute;
-top: 10px;
-right: 10px;
-border-radius:50%;
-width:25px;
-height:25px;
-background-color: red;
+top: 5px;
+right: 5px;
+border-radius:8px;
+border: 1px solid white;
+width:40px;
+height:35px;
+/* background-color: transparent; */
+
 box-shadow: 0px 0px 20px rgba(16, 172, 42, 0.2);
 z-index: 3;
 border: 0;
