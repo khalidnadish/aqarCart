@@ -40,8 +40,6 @@ function Contact({
         </cpm.FlexDiv>
       </cpm.LeftArea>
     </cpm.BodyWarper>
-
-
   );
 }
 
