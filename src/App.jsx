@@ -10,6 +10,9 @@ import Contact from "./pages/contact/Contact";
 import About from "./pages/about/About";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import IdPage  from "./pages/IdPage/IdPage"
+import PageNotFound from "./pages/404/PageNotFound";
+ 
 
 
 // import Loader from "./component/loader/Loader";
@@ -60,6 +63,8 @@ function App() {
                     <Route index element={<AppBody />} />
                     <Route path="/about" element={<About />} />
                     <Route path="/contact" element={<Contact />} />
+                    <Route path="/offer/:id" element={<IdPage />} />
+                    <Route path="*" element={<PageNotFound />} />
                   </Route>
                 </Routes>
               </Suspense>

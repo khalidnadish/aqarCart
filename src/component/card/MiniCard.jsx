@@ -23,7 +23,7 @@ const [open, setOpen] = useState(false);
           <RiCustomerServiceLine color="green" fontSize={"1.7rem"}/>
         </cpm.ActionBtn>
         <CardHeader setMenu={setMenu} title={data.header} type={data.type} />
-        <CardBody image={data.img} detail={data.detail} />
+        <CardBody image={data.img} detail={data.detail} id={data.id} />
         <CardFooter
           commentCounter={data.commentCounter}
           create={data.create}

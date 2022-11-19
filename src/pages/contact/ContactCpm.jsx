@@ -4,14 +4,20 @@ import styled from "styled-components";
 
 const BodyWarper = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-evenly;
+  /* align-items: center; */
+  /* flex-wrap: wrap; */
+  padding:1rem;
   flex-direction: column;
   width: 100%;
   max-height:  100%;
   height:  calc(100vh - 120px);
   color: ${({ theme }) => theme.text};
   overflow:auto ;
+  
+  @media (max-width: 500px) {
+    font-size:.8rem;
+  }
 `;
 
 const ContentWarper = styled.div`
@@ -24,23 +30,44 @@ const ContentWarper = styled.div`
   width: 100%;
 `;
 
+
+const  LeftArea= styled.div``;
+const  RightArea= styled.div`
+
+display: flex;
+flex-direction: column;
+gap: 1rem;
+`;
+
+
 const HeroImageWarper = styled.div`
-  height: 50%;
-  width: 100%;
+  max-width: 800px;
+  max-height: 400px;
   margin: 1rem;
+  background-color: red;  
+`;
+
+const Image = styled.img`
+  
+  width: 80%;
+  height: auto;
+  object-fit: cover;
 `;
 
 
 const Txt = styled.p`
-  outline: none;
-  padding: 0.2rem 1rem;
-font-size:1rem;
-  min-width: 5rem;
+/* width: 100%; */
+  /* outline: none; */
+  /* padding: 0.2rem 1rem; */
+/* font-size:1rem; */
+  /* min-width: 5rem; */
   font-family: "CairoBold";
-  border-radius: 8px;
-  border: none;
-  background-color: ${({ theme }) => theme.bg};
-  color: ${({ theme }) => theme.text};
+  
+  font-size: .8rem;
+  
+  /* background-color: ${({ theme }) => theme.bg}; */
+  /* color: ${({ theme }) => theme.text}; */
+  color: red;
   
   @media (max-width: 500px) {
     font-size:.8rem;
@@ -66,22 +93,16 @@ const HeroTextWarper = styled.div`
 
   
 `;
-const Image = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-  width: 100%;
-  height: auto;
-  object-fit: fill;
-`;
+
 
 const FlexDiv = styled.div`
 display: flex;
 width: 100%;
 
-flex-direction: ${({direction})=>direction==="row" ? "row":"column"};
+/* flex-direction: ${({direction})=>direction==="row" ? "row":"column"}; */
 /* justify-content: flex-start; */
-align-items: flex-start;
-gap:1rem;
+/* align-items: flex-start; */
+/* gap:1rem; */
 `;
 
 const imageWarper = styled.div`
@@ -132,5 +153,7 @@ HeroSubTitle,
  HeroSubTitleWraper,
  Txt,
  Btn,
- FlexDiv
+ FlexDiv,
+ LeftArea,
+RightArea
 };
