@@ -7,9 +7,17 @@ import { FaRegComment } from "react-icons/fa";
 import { MdDateRange } from "react-icons/md";
  
 
-function CardFooter({commentCounter, create, seeCounter}) {
+function CardFooter({commentCounter, create, seeCounter,id}) {
   return (
     <cpm.actionWarper>
+        <cpm.IdLink to={`/offer/${id}`}>
+      <cpm.footeIconWithTextWarper>
+      <cpm.MoreBtn>
+        تفاصيل اكثر
+      </cpm.MoreBtn>
+      
+    </cpm.footeIconWithTextWarper>
+      </cpm.IdLink>
     {/* -------------------------------------------- */}
     <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>
@@ -31,6 +39,11 @@ function CardFooter({commentCounter, create, seeCounter}) {
       </cpm.footeIconWarper>
       <cpm.footeIconTextWarper>{create}</cpm.footeIconTextWarper>
     </cpm.footeIconWithTextWarper>
+
+    
+    
+
+
     {/* -------------------------------------------- */}
     {/* <cpm.footeIconWithTextWarper>
       <cpm.footeIconWarper>

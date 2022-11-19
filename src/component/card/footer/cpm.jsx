@@ -1,5 +1,5 @@
 import styled from "styled-components";
- 
+import {Link} from  "react-router-dom";
  
 const actionWarper = styled.div`
   display: flex;
@@ -15,24 +15,19 @@ const actionWarper = styled.div`
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.soft};
   border-top: 1px solid ${({ theme }) => theme.textSoft};
-
-
   border-radius: 0px 0px 8px 8px;
-  /* box-shadow:${({ theme }) => theme.boxShadow}; */
 `;
-
+/* ------------------------------------------ */
 const footeIconWarper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-
   margin-top: 8px;
   background-color: ${({ theme }) => theme.soft};;
   color: ${({ theme }) => theme.text};
- 
   font-size: 15px;
 `;
-
+/* ------------------------------------------ */ 
 const footeIconTextWarper = styled.div`
 font-size: 10px;
 font-weight: lighter;
@@ -40,15 +35,14 @@ font-style: italic;
 color: inherit;
 font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 `;
-
+/* ------------------------------------------ */ 
 const footeIconWithTextWarper = styled.div`
 display: flex;
 flex-direction:column;
 justify-content: center;
 align-items: center;
-
 `;
-
+/* ------------------------------------------ */ 
 const ServicePrice = styled.h4`
   margin-top: 10px;
   display: flex;
@@ -65,7 +59,7 @@ const ServicePrice = styled.h4`
     font-size: 14px;
   }
 `;
-
+/* ------------------------------------------ */ 
 const TextDetail = styled.p`
   margin-top: 10px;
   text-align: right;
@@ -77,7 +71,7 @@ const TextDetail = styled.p`
     font-size: 14px;
   }
 `;
-
+/* ------------------------------------------ */ 
 const SubTextDetail = styled.li`
   margin-top: 5px;
   text-align: right;
@@ -90,17 +84,79 @@ const SubTextDetail = styled.li`
     font-size: 14px;
   }
 `;
+// const MoreBtn = styled.button`
+// display: flex;
+// justify-content: center;
+// align-items: center;
+// font-family: "CairoBold";
+// background-color: blueviolet;
+// width: 100%;
+// flex:1;
+// padding: .5rem 1rem;
+// border-radius: 4px;
+// font-size: .8rem;
+// box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+// `;
 
+const MoreBtn = styled.button`
+display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    text-decoration: none;
+    font-family: "CairoBold";
+    font-weight: 500;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    letter-spacing: 0.02857em;
+    text-transform: uppercase;
+    min-width: 64px;
+    padding: 6px 16px;
+    border-radius: 4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    color: rgb(255, 255, 255);
+    background-color: rgb(25, 118, 210);
+    box-shadow: rgb(0 0 0 / 20%) 0px 3px 1px -2px, rgb(0 0 0 / 14%) 0px 2px 2px 0px, rgb(0 0 0 / 12%) 0px 1px 5px 0px;
+    `;
+
+
+
+
+const IdLink = styled(Link)`
+ text-decoration: none;
+ list-style: none;
+ /* display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  width: 100%;
+  text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
+  padding-bottom: 5px;
+  color: ${({ theme }) => theme.text};
+    
+  &:hover {
+    border-bottom:3px solid ;
+  } */
+`;
+
+/* ------------------------------------------ */ 
 export default {
-  
-  
- 
-  
- 
- 
- 
   actionWarper,
   footeIconWarper,
   footeIconTextWarper,
   footeIconWithTextWarper,
+  MoreBtn,
+  IdLink
 };
+

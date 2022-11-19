@@ -8,6 +8,7 @@ import { AiOutlineComment } from "react-icons/ai";
 import GenralInfo from "./GenralInfo"
 import Showimage from "./Showimage"
 import cpm from "./idpagecpm";
+import ShowVideo from "./video/ShowVideo"
 
 function IdPage({ data }) {
   const { id } = useParams();
@@ -73,7 +74,7 @@ const SideMenu = ({ comp = "x", setComp, id, mydata }) => {
 
 
           {/* -------------------------------------- */}
-          <cpm.SideIconWarper onClick={() => setComp(<Videos id={id} />)}>
+          <cpm.SideIconWarper onClick={() => setComp(<ShowVideo id={id} />)}>
             <AiOutlineVideoCamera />
           </cpm.SideIconWarper>
           {/* -------------------------------------- */}

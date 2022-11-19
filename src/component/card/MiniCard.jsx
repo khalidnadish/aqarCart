@@ -28,6 +28,7 @@ const [open, setOpen] = useState(false);
           commentCounter={data.commentCounter}
           create={data.create}
           seeCounter={data.seeCounter}
+          id={data.id}
         />
         {menu && <CardMenu menu={menu} setMenu={setMenu} />}
       </cpm.Container>
