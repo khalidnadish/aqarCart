@@ -3,8 +3,10 @@ import { useParams } from "react-router-dom";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 import { BsCardImage } from "react-icons/bs";
 import { AiOutlineVideoCamera } from "react-icons/ai";
-import  GoogleLocation from "../../component/googleMap/GoogleMap" 
+
 import { AiOutlineComment } from "react-icons/ai";
+import GenralInfo from "./GenralInfo"
+import Showimage from "./Showimage"
 import cpm from "./idpagecpm";
 
 function IdPage({ data }) {
@@ -63,9 +65,13 @@ const SideMenu = ({ comp = "x", setComp, id, mydata }) => {
             <MdOutlineRealEstateAgent />
           </cpm.SideIconWarper>
           {/* -------------------------------------- */}
-          <cpm.SideIconWarper onClick={() => setComp(<Images id={id} />)}>
+
+
+          <cpm.SideIconWarper onClick={() => setComp(<Showimage />)}>
             <BsCardImage />
           </cpm.SideIconWarper>
+
+
           {/* -------------------------------------- */}
           <cpm.SideIconWarper onClick={() => setComp(<Videos id={id} />)}>
             <AiOutlineVideoCamera />
@@ -88,53 +94,6 @@ const ShowBox = ({ childern }) => {
   );
 };
 
-const GenralInfo = ({ id, mydata }) => {
-  const [open, setOpen] = useState(false);
-  return (
-    <>
-      <cpm.ContentWarper>
-        {/* ------------------------------------------------ */}
-
-
-
-        <cpm.FieldSet>
-        <cpm.TXTtitleWraper dirx="column">
-          <cpm.TXTtitle>رقم العرض</cpm.TXTtitle>
-          <cpm.TXTdata> {mydata.id} </cpm.TXTdata>
-        </cpm.TXTtitleWraper>
-       
-        {/* ------------------------------------------------ */}
-        <cpm.TXTtitleWraper dirx="column">
-          <cpm.TXTtitle>تاريخ النشر</cpm.TXTtitle>
-          <cpm.TXTdata> {mydata.crDate} </cpm.TXTdata>
-        </cpm.TXTtitleWraper>
-        {/* ------------------------------------------------ */}
-        <cpm.TXTtitleWraper dirx="column">
-          <cpm.TXTtitle>نوع العرض</cpm.TXTtitle>
-          <cpm.TXTdata> {mydata.stutes} </cpm.TXTdata>
-        </cpm.TXTtitleWraper>
-        </cpm.FieldSet>
-
-
-
-         {/* ------------------------------------------------ */}
-         <cpm.TXTtitleWraper>
-          <cpm.TXTdata> {mydata.title} </cpm.TXTdata>
-        </cpm.TXTtitleWraper>
-        {/* ------------------------------------------------ */}
-        <cpm.TXTtitleWraper>
-          <cpm.TXTdata align="right"> {mydata.detail} </cpm.TXTdata>
-        </cpm.TXTtitleWraper>
-        {/* ------------------------------------------------ */}
-        <cpm.TXTtitleWraper border="none" onClick={()=>{setOpen(true)}}>
-          <cpm.TXTBtn>خريطة جوجل</cpm.TXTBtn>
-        </cpm.TXTtitleWraper>
-        {/* ------------------------------------------------ */}
-      </cpm.ContentWarper>
-      {open && <GoogleLocation open={open} setOpen={setOpen} lat={"150"} lng={2500} image="/img/map1.jpg"/>}
-    </>
-  );
-};
 
 const Images = ({ id }) => {
   return (

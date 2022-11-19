@@ -99,7 +99,7 @@ const InnerSideMenu = styled.div`
 `;
 /* ------------------------------------------- */
 const SideIconWarper = styled.div`
-  /* height: 50%; */
+  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,6 +112,7 @@ const SideIconWarper = styled.div`
   border-bottom: 0.5px solid #41404019;
   cursor: pointer;
   z-index: 5;
+  
 `;
 /* ------------------------------------------- */
 const HeroTextWarper = styled.div`
