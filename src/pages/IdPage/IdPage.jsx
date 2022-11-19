@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { MdOutlineRealEstateAgent } from "react-icons/md";
 import { BsCardImage } from "react-icons/bs";
 import { AiOutlineVideoCamera } from "react-icons/ai";
-
+import  GoogleLocation from "../../component/googleMap/GoogleMap" 
 import { AiOutlineComment } from "react-icons/ai";
 import cpm from "./idpagecpm";
 
@@ -89,6 +89,7 @@ const ShowBox = ({ childern }) => {
 };
 
 const GenralInfo = ({ id, mydata }) => {
+  const [open, setOpen] = useState(false);
   return (
     <>
       <cpm.ContentWarper>
@@ -117,26 +118,20 @@ const GenralInfo = ({ id, mydata }) => {
 
 
          {/* ------------------------------------------------ */}
-
-
-
          <cpm.TXTtitleWraper>
-          {/* <cpm.TXTtitle>Title</cpm.TXTtitle> */}
           <cpm.TXTdata> {mydata.title} </cpm.TXTdata>
         </cpm.TXTtitleWraper>
         {/* ------------------------------------------------ */}
-
         <cpm.TXTtitleWraper>
-          {/* <cpm.TXTtitle>Deatail</cpm.TXTtitle> */}
           <cpm.TXTdata align="right"> {mydata.detail} </cpm.TXTdata>
         </cpm.TXTtitleWraper>
         {/* ------------------------------------------------ */}
-        <cpm.TXTtitleWraper>
-          <cpm.TXTtitle>Location</cpm.TXTtitle>
-          <cpm.TXTdata> {mydata.location} </cpm.TXTdata>
+        <cpm.TXTtitleWraper border="none" onClick={()=>{setOpen(true)}}>
+          <cpm.TXTBtn>خريطة جوجل</cpm.TXTBtn>
         </cpm.TXTtitleWraper>
         {/* ------------------------------------------------ */}
       </cpm.ContentWarper>
+      {open && <GoogleLocation open={open} setOpen={setOpen} lat={"150"} lng={2500} image="/img/map1.jpg"/>}
     </>
   );
 };

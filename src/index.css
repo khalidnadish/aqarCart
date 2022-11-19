@@ -75,7 +75,7 @@ h1{
 
 p{
   font-size: clamp(.8rem, 1rem + 10vw,1.1rem);
-  font-family: 'Tajawal';
+  font-family: 'TajawalBold';
 }
 .Toastify__toast-body { 
   font-family: 'CairoBold';

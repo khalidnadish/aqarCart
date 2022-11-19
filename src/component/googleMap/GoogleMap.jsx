@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import styled from "styled-components";
 import DiloagShow from "../dailog/DiloagShow";
-
+import { toast } from "react-toastify";
 const Btn = styled.button`
   outline: none;
   padding: 0.5rem;
@@ -11,6 +11,8 @@ const Btn = styled.button`
   border: none;
   background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
+  font-family: "CairoBold";
+
 `;
 
 const copyBtn1 = styled.button`
@@ -36,6 +38,7 @@ font-size:1rem;
   border: none;
   background-color: ${({ theme }) => theme.textSoft};
   color: ${({ theme }) => theme.text};
+  font-family: "CairoBold";
   
   @media (max-width: 500px) {
     font-size:.85rem;
@@ -46,17 +49,12 @@ font-size:1rem;
 
 const ImageWraper = styled.div`
   width: 100%;
-  height: 300px;
-  /* background-color: azure; */
-  /* padding: 0.5rem; */
+  height: 100%;
 `;
 
 const Image = styled.img`
-  /* min-width: 200px; */
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
   height: auto;
-  /* object-fit: scale-down; */
   background-color: #000;
 `;
 
@@ -64,11 +62,8 @@ const ActionWraper = styled.div`
   display: flex;
   align-items: center;
   gap: 1rem;
-
   width: 100%;
   height: 100%;
-  /* background-color: #000; */
-  /* padding: 0.5rem; */
 `;
 
 const ImageActionWraper = styled.div`
@@ -83,21 +78,16 @@ const ImageActionWraper = styled.div`
   padding: 0.5rem;
 `;
 
-function GoogleLocation() {
-  const [open, setOpen] = useState(false);
+function GoogleLocation({open,setOpen,lat,lng,image="/img/map1.jpg"}) {
   return (
     <>
       <div>GoogleMap</div>
-      <Btn onClick={() => setOpen(true)}>عرض الخريظة</Btn>
-      <Btn>ارسال ايميل</Btn>
-
       {open && (
         <DiloagShow
           open={open}
           toggle={setOpen}
-          title={"عرض الخريطه"}
-          children={<MapImage />}
-          
+          title={"عرض الموقع"}
+          children={<MapImage lat={lat} lng={lng} image={image}/>}
         />
       )}
     </>
@@ -106,12 +96,13 @@ function GoogleLocation() {
 
 export default GoogleLocation;
 
-const MapImage = ({lat=0.000,att=0.001}) => {
+const MapImage = ({lat,lng,image}) => {
   const [iscopy,setIscopy]=useState(false);
 
   const handleCopy=()=>{
-    navigator.clipboard.writeText(`${lat},${att}`);
+    navigator.clipboard.writeText(`${lat},${lng}`);
     setIscopy(!iscopy)
+    toast.success("تم حفظ الاحداثيات انسخها لجوجل ماب  لتصل الينا بالسلامة");
   }
 
 
@@ -126,10 +117,10 @@ const MapImage = ({lat=0.000,att=0.001}) => {
           </Btn>
 
           <Txt>خط الطول : {lat}</Txt>
-          <Txt>خط العرض : {att}</Txt>
+          <Txt>خط العرض : {lng}</Txt>
         </ActionWraper>
         <ImageWraper>
-          <Image src="./img/map1.jpg" />
+          <Image  src={image} alt={"sd"} />
         </ImageWraper>
       </ImageActionWraper>
     </>

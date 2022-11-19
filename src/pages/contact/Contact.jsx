@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import GoogleMap from "../../component/googleMap/GoogleMap";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import cpm from "./ContactCpm";
