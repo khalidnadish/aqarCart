@@ -29,8 +29,6 @@ function AppFooter() {
       <cpm.IconWarper onClick={copySnapshot}>
         <GrSnapchat color="yellow"/>
       </cpm.IconWarper>
-
-          <cpm.ImageIcon src={"./icons/call.svg"}/>
       <cpm.IconWarper onClick={copyInstgram}>
         <AiFillInstagram color="#e00bf3"/>
       </cpm.IconWarper>

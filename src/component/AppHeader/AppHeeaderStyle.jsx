@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+/* ----------------------------------- */
 const Container = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   max-height: 60px;
   height: 60px;
@@ -11,20 +11,14 @@ const Container = styled.div`
   top: 0;
   width: 100%;
   gap: 1rem;
+  padding: 1rem;
   font-family: "CairoBold";
-  
   box-shadow: ${({ theme }) => theme.HboxShadow};
   background-color: ${({ theme }) => theme.nafbar};
   color: ${({ theme }) => theme.text};
-  padding: 1rem;
   z-index: 1;
-
-  @media only screen and (max-width: 500px) {
-    /* padding: 1rem; */
-    /* height: 100vh; */
-  }
 `;
-
+/* ----------------------------------- */
 const Item = styled.div`
   display: flex;
   align-items: center;
@@ -34,17 +28,16 @@ const Item = styled.div`
   width: 100%;
   cursor: pointer;
   padding: 5px 0px;
-  /* border-right: 1px solid ${({ theme }) => theme.text}; */
   text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
   text-align: right;
   &:hover {
     background-color: ${({ theme }) => theme.soft};
   }
-
   @media only screen and (max-width: 500px) {
     display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
 `;
+/* ----------------------------------- */
 const Logo = styled.div`
   display: flex;
   align-items: center;
@@ -62,7 +55,7 @@ const Logo = styled.div`
     display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
 `;
-
+/* ----------------------------------- */
 const Menu = styled.ul`
   display: flex;
   justify-content: ${({ menuDir }) =>
@@ -77,21 +70,27 @@ const Menu = styled.ul`
     justify-content: space-between;
   }
 `;
+/* ----------------------------------- */
 const Navigator = styled.div``;
-
+/* ----------------------------------- */
 const MenuContainer = styled.div`
   @media only screen and (max-width: 500px) {
     display: flex;
   }
 `;
-
+/* ----------------------------------- */
 const MenuTitle = styled.p`
+display: flex;
+justify-content: center;
+align-items: center;
  font-family: "TajawalBold";
+ width: 100%;
+ text-align: center;
   @media only screen and (max-width: 500px) {
     display: ${({ menuDir }) => (menuDir === "col" ? "flex" : "none")};
   }
 `;
-
+/* ----------------------------------- */
 const SideMenu = styled.div`
   display: flex;
   flex-direction: column;
@@ -100,18 +99,17 @@ const SideMenu = styled.div`
   width: 200px;
   right: 50px;
   height: 70%;
+  
   color: ${({ theme }) => theme.text};
   background-color: ${({ theme }) => theme.soft};
   transition: all 0.3s ease-in;
-  z-index: 2;
+  z-index: 7;
   @media only screen and (max-width: 500px) {
-    /* display: none; */
-    width: 50%;
+     width: 50%;
     right: -50px;
-    /* background-color:red; */
-  }
+   }
 `;
-
+/* ----------------------------------- */
 const BackIconMenuWraper = styled.div`
   display: flex;
   gap: 10px;
@@ -124,7 +122,7 @@ const BackIconMenuWraper = styled.div`
   border-bottom: 0.5px solid ${({ theme }) => theme.bg};
   text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
 `;
-
+/* ----------------------------------- */
 const MenuItemWraper = styled.div`
   display: flex;
   align-items: center;
@@ -135,7 +133,7 @@ const MenuItemWraper = styled.div`
     background-color: ${({ theme }) => theme.price};
   }
 `;
-
+/* ----------------------------------- */
 const MenuItem = styled.li`
   display: flex;
   justify-content: center;
@@ -149,9 +147,8 @@ const MenuItem = styled.li`
   &:hover {
     border-bottom:3px solid ;
   }
- 
-`;
-
+ `;
+/* ----------------------------------- */
 const MenuLink = styled(Link)`
  display: flex;
   justify-content: center;
@@ -161,14 +158,16 @@ const MenuLink = styled(Link)`
   width: 100%;
   text-align: ${({ menuDir }) => (menuDir === "col" ? "right" : "center")};
   list-style: none;
-  padding-bottom: 5px;
+  /* padding-bottom: 5px; */
   color: ${({ theme }) => theme.text};
-    
+  background-color: ${({ theme }) => theme.bgLighter};
+  padding: .5rem;
+  border-radius: 8px;
   &:hover {
     border-bottom:3px solid ;
   }
 `;
-
+/* ----------------------------------- */
 export default {
   Container,
   Item,

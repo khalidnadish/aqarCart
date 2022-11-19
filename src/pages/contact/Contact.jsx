@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import styled from "styled-components";
 import { toast } from "react-toastify";
 import cpm from "./ContactCpm";
 // import data from "./data.json";
@@ -18,30 +17,31 @@ function Contact({
     toast.success("تم حفظ الاحداثيات انسخها لجوجل ماب  لتصل الينا بالسلامة");
   };
   return (
-    <cpm.BodyWarper>
-      
-      <cpm.RightArea>
-            
-              <cpm.Txt>رقم الجوال : {mobile}</cpm.Txt>
-              <cpm.Txt>العنوان : {adr}</cpm.Txt>
-              <cpm.Txt>الايميل : {email}</cpm.Txt>
-             
-      </cpm.RightArea>
-{/* =============================================== */}
-      <cpm.LeftArea>
-            <cpm.HeroImageWarper>
-              <cpm.Image src="./img/map1.jpg" />
-            </cpm.HeroImageWarper>
-            <cpm.FlexDiv direction="row">
-              <cpm.Btn iscopy={iscopy} onClick={handleCopy}>
-                {iscopy ? <>تم النسخ </> : <> نسخ</>}
-              </cpm.Btn>
-              <cpm.Txt>خط الطول : {lat}</cpm.Txt>
-              <cpm.Txt>خط العرض : {att}</cpm.Txt>
-            </cpm.FlexDiv>
-      </cpm.LeftArea>
 
+
+    <cpm.BodyWarper>
+      <cpm.RightArea>
+        <cpm.Txt>رقم الجوال : {mobile}</cpm.Txt>
+        <cpm.Txt>العنوان : {adr}</cpm.Txt>
+        <cpm.Txt>الايميل : {email}</cpm.Txt>
+      </cpm.RightArea>
+      {/* =============================================== */}
+      <cpm.LeftArea>
+        <cpm.HeroImageWarper>
+          <cpm.Image src="./img/map1.jpg" />
+        </cpm.HeroImageWarper>
+        <cpm.FlexDiv direction="row">
+          
+          <cpm.Btn iscopy={iscopy} onClick={handleCopy}>
+            {iscopy ? <>تم النسخ </> : <> نسخ</>}
+          </cpm.Btn>
+          <cpm.Txt>خط الطول : {lat}</cpm.Txt>
+          <cpm.Txt>خط العرض : {att}</cpm.Txt>
+        </cpm.FlexDiv>
+      </cpm.LeftArea>
     </cpm.BodyWarper>
+
+
   );
 }
 

@@ -17,15 +17,6 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
   return (
     <>
       <Style.Container>
-        {/* <Style.Navigator
-        onClick={() => {
-          setOpen(true);
-        }}
-      >
-        <AiOutlineMenuFold />
-      </Style.Navigator> */}
-
-        {/* <Style.MenuContainer> */}
         <Style.Logo>logo</Style.Logo>
         <Style.Menu>
           {/*  --------------------------------------------*/}
@@ -43,29 +34,19 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
             <MdOutlineContactPhone />
             <Style.MenuTitle>تواصل</Style.MenuTitle>
           </Style.MenuLink>
-
           <Style.MenuLink>
-            <div onClick={()=>{setOpenFilter(true)}}>
-            <MdFilterAlt />
-            <Style.MenuTitle ></Style.MenuTitle>
-            </div>
-          </Style.MenuLink>
 
+            <Style.MenuTitle menuDir="col" onClick={()=>{setOpenFilter(true)}}>
+            <MdFilterAlt />
+            {/* <Style.MenuTitle >تصفية</Style.MenuTitle> */}
+            </Style.MenuTitle>
+          </Style.MenuLink>
           {/*  --------------------------------------------*/}
           <Style.MenuItem onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? <MdModeNight /> : <MdLightMode />}
-            {/* <Style.MenuTitle>{darkMode ?<>نهاري</>  :<>ليلي</> }</Style.MenuTitle> */}
           </Style.MenuItem>
         </Style.Menu>
-        {/* 
-      <Style.Item onClick={() => setDarkMode(!darkMode)}>
-        {darkMode ? <MdModeNight /> : <MdLightMode />}
-        {darkMode ? (
-          <Style.MenuItem>النهاري</Style.MenuItem>
-        ) : (
-          <Style.MenuItem>اليلي</Style.MenuItem>
-        )}
-      </Style.Item>  */}
+        
       </Style.Container>
       {openFilter &&
       <LeftDrawer
@@ -76,7 +57,7 @@ function AppHeader({ open, setOpen, darkMode, setDarkMode }) {
         drHight={"100vh"}
       >
          
-        {/* <AvatarPrsonInfo targetUserid={userid} /> */}
+      
       </LeftDrawer>
 }
     </>
