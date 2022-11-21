@@ -8,7 +8,8 @@ export const darkTheme = {
   price:"#AA0000",
   hrColor:"#ccc",
   textType:"black",
-  HboxShadow:"0 2px 6px rgba(0,0,0, .8)"
+  HboxShadow:"0 2px 6px rgba(0,0,0, .8)",
+  updateBtn:"#c58d09"
 }
 export const lightTheme = {
   bg:"#f9f9f9",

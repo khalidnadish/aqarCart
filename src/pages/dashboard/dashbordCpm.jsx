@@ -3,16 +3,22 @@ import styled from "styled-components";
 /* ------------------------------------- */
 const BodyWarper = styled.div`
   display: flex;
+  flex-wrap: wrap;
   position: relative;
-  /* justify-content: space-between; */
-  flex-direction: column;
+  justify-content: center;
+   
+  flex-direction: row;
   width: 90%;
   height: calc(100vh - 120px);
+  
+  
   margin: auto;
   color: ${({ theme }) => theme.text};
-  gap: 1rem;
-  overflow: auto;
+  min-height: 0px;
+  /* gap: 1rem; */
+  /* overflow: auto; */
   @media (max-width: 500px) {
+    flex-direction: column;
     font-size: 0.8rem;
   }
 `;
@@ -70,44 +76,57 @@ const Txt = styled.p`
   align-items: center;
   font-family: "CairoBold";
   font-size: 0.9rem;
-  width:${({ width }) => width};
-  color: ${({ theme }) => theme.text};
+  width: ${({ width }) => width};
+
+
+ 
+  /* color: ${({ theme }) => theme.text}; */
+  /* min-width: 0px; */
   @media (max-width: 500px) {
     font-size: 0.8rem;
   }
 `;
 /* ------------------------------------- */
 const Btn = styled.button`
+display: flex;
+align-items: center;
+ justify-content: center;
   outline: none;
   padding: 0.2rem 1rem;
   /* min-width: 5rem; */
-  font-family: "CairoBold";
+  font-family: "TajawalBold";
+
   border-radius: 8px;
   border: 1px solid;
-  background-color: ${({ theme }) => theme.soft};
+  width: 100%;
+  font-size:1rem;
+  justify-items: center;
+  background-color: ${({ theme }) => theme.updateBtn};
   color: ${({ theme }) => theme.text};
+box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
+
+  color: black;
   cursor: pointer;
 `;
 
 /* ------------------------------------- */
 const ShowContentWarper = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: absolute;
+  flex-wrap: wrap;
   top: 60px;
   left: 0px;
   width: 100%;
-  height: calc(100vh - 200px);
-  justify-content: center;
+  max-height: calc(100vh - 200px);
+  height: 100%;
   align-items: center;
-  background-color: #525151;
+  background-color: ${({ theme }) => theme.soft};
   border-radius: 8px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+
   @media (max-width: 500px) {
-    width: 100%;
-    top: 60px;
-    left: 0;
-    height: calc(100vh - 220px);
+    
   }
 `;
 /* -------------FieldSet------------------------ */
@@ -117,12 +136,9 @@ const FieldSet = styled.div`
   align-items: center;
   width: 100%;
   height: auto;
-  
   gap: 10px;
   border: 1px solid #ddd;
   border-radius: 5px;
-  /* padding: 15px; */
-  /* margin: 5px 0; */
   font-family: "TajawalBold";
   legend {
     font-size: 0.8rem;
@@ -141,9 +157,11 @@ const Txtlabel = styled.label`
   align-items: center;
   font-family: "CairoBold";
   font-size: 0.9rem;
+  min-width: 0px;
   color: ${({ theme }) => theme.text};
   @media (max-width: 500px) {
     font-size: 0.8rem;
+    min-width: 0px;
   }
 `;
 /* -----------FlexDiv-------------- */
@@ -155,7 +173,7 @@ const FlexDiv = styled.div`
   flex-wrap: wrap;
   width: 100%;
   gap: 7px;
-  margin: .5rem;
+  margin: 0.5rem;
   background-color: #201f1f;
   @media (max-width: 500px) {
     display: flex;
@@ -165,14 +183,15 @@ const FlexDiv = styled.div`
 `;
 /* ------------------input------------------- */
 const Input = styled.input`
-/* display: block; */
+  /* display: block; */
   border: 0.5px solid ${({ theme }) => theme.hrColor};
   border-radius: 5px;
   color: ${({ theme }) => theme.text};
   background-color: transparent;
   outline: none;
   padding: 5px;
-  width:${({ width }) => width};
+  width: ${({ width }) => width};
+  font-family:"TajawalRegular";
   &:focus {
     color: black;
     background-color: white;
@@ -181,9 +200,36 @@ const Input = styled.input`
     /* flex-grow: 1;
     flex-shrink: 1; */
     font-size: 0.8rem;
-    width:${({ width }) => width};
+    width: ${({ width }) => width};
   }
 `;
+
+
+ 
+
+const TextInput = styled.textarea`
+  border: 0.5px solid ${({ theme }) => theme.hrColor};
+  border-radius: 5px;
+  color: ${({ theme }) => theme.text};
+  background-color: transparent;
+  outline: none;
+  padding: 5px;
+  width: ${({ width }) => width};
+resize : vertical;
+font-family: "TajawalRegular";
+
+  &:focus {
+    color: black;
+    background-color: white;
+  }
+  @media (max-width: 500px) {
+    /* flex-grow: 1;
+    flex-shrink: 1; */
+    font-size: 0.8rem;
+    width: ${({ width }) => width};
+  }
+`;
+
 
 
 /* ------------------------------------- */
@@ -201,4 +247,5 @@ export default {
   FieldSet,
   Input,
   Txtlabel,
+  TextInput
 };

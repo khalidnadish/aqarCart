@@ -6,7 +6,8 @@
     "dev": "vite",
     "build": "vite build && netlify deploy --prod",
     "preview": "vite preview",
-    "server": "nodemon node server/app.js"
+    "server": "nodemon node server/app.js",
+    "all": "cd server && nodemon node server/app.js && cd.. && vite"
   },
   "dependencies": {
     "@emotion/react": "^11.10.5",
@@ -36,6 +37,7 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
+    "babel-plugin-styled-components": "^2.0.7",
     "vite": "^3.2.3"
   }
 }
