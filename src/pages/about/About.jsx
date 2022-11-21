@@ -1,8 +1,14 @@
 import React from "react";
 import cpm from "./Aboutcpm";
 import data from "./data.json";
+import { useGetdata } from "../../component/utils/hooks/useGetdata";
 
 function About() {
+
+  const {data,isLoading}=useGetdata()
+  if(isLoading){
+    return <div>Loadin....</div>
+  }
   return (
     <cpm.BodyWarper>
       <cpm.ContentWarper>
@@ -11,7 +17,7 @@ function About() {
         </cpm.HeroImageWarper>
 
         <cpm.HeroTextWarper>
-          <HeroText />
+          <HeroText data={data}/>
         </cpm.HeroTextWarper>
       </cpm.ContentWarper>
     </cpm.BodyWarper>
@@ -21,18 +27,20 @@ function About() {
 export default About;
 
 const HeroImage = () => {
+  
   return (
     <>
       <cpm.Image src={data.heroimage} />
     </>
   );
 };
-const HeroText = () => {
+const HeroText = ({data}) => {
+  console.log(data?.data)
   return (
     <>
-      <cpm.HeroTitleHeader>{data.heroTextTitle}</cpm.HeroTitleHeader>
+      <cpm.HeroTitleHeader>{data.data?.herotext}</cpm.HeroTitleHeader>
       <cpm.HeroSubTitleWraper>
-        <cpm.HeroSubTitle>{data.heroTextDetail}</cpm.HeroSubTitle>
+        <cpm.HeroSubTitle>{data.data?.herodeail}</cpm.HeroSubTitle>
       </cpm.HeroSubTitleWraper>
     </>
   );

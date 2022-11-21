@@ -5,8 +5,9 @@ import '../src/fonts/Cairo-VariableFont_wght.ttf'
 import './fonts.css'
 import './index.css'
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <App />
-  </React.StrictMode>
+  //  </React.StrictMode>
 )

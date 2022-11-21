@@ -1,16 +1,19 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import cpm from "./ContactCpm";
+import { useGetdata } from "../../component/utils/hooks/useGetdata";
 // import data from "./data.json";
 
-function Contact({
-  lat = 0.0,
-  att = 0.001,
-  mobile = "0500000000",
-  adr = "جدة الممكة العلربية السعودية ",
-  email = "devnadish.gmail.com",
-}) {
+function Contact() {
   const [iscopy, setIscopy] = useState(false);
+
+  const {data,isLoading}=useGetdata()
+  if(isLoading){
+    return <div>Loadin....</div>
+  }
+
+
+
   const handleCopy = () => {
     navigator.clipboard.writeText(`${lat},${att}`);
     setIscopy(!iscopy);
@@ -21,9 +24,13 @@ function Contact({
 
     <cpm.BodyWarper>
       <cpm.RightArea>
-        <cpm.Txt>رقم الجوال : {mobile}</cpm.Txt>
-        <cpm.Txt>العنوان : {adr}</cpm.Txt>
-        <cpm.Txt>الايميل : {email}</cpm.Txt>
+        <cpm.Txt>رقم الجوال : {data.data?.phone}</cpm.Txt>
+        <cpm.Txt>واتس : {data.data?.whatapp}</cpm.Txt>
+        <cpm.Txt>العنوان : {data.data?.adrs}</cpm.Txt>
+        <cpm.Txt>الايميل : {data.data?.email}</cpm.Txt>
+        <cpm.Txt>سناب : {data.data?.snapsot}</cpm.Txt>
+        <cpm.Txt>انستجرام : {data.data?.instgram}</cpm.Txt>
+
       </cpm.RightArea>
       {/* =============================================== */}
       <cpm.LeftArea>
@@ -35,8 +42,8 @@ function Contact({
           <cpm.Btn iscopy={iscopy} onClick={handleCopy}>
             {iscopy ? <>تم النسخ </> : <> نسخ</>}
           </cpm.Btn>
-          <cpm.Txt>خط الطول : {lat}</cpm.Txt>
-          <cpm.Txt>خط العرض : {att}</cpm.Txt>
+          <cpm.Txt>خط الطول : {data.data?.lat}</cpm.Txt>
+          <cpm.Txt>خط العرض : {data.data?.att}</cpm.Txt>
         </cpm.FlexDiv>
       </cpm.LeftArea>
     </cpm.BodyWarper>

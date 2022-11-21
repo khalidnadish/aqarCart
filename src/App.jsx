@@ -12,7 +12,15 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import IdPage  from "./pages/IdPage/IdPage"
 import PageNotFound from "./pages/404/PageNotFound";
+import Dashboard from "./pages/dashboard/Dashboard";
+
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
  
+
+const queryClient = new QueryClient()
 
 
 // import Loader from "./component/loader/Loader";
@@ -44,9 +52,9 @@ const BodyWrapper = styled.div`
 function App() {
   const [darkMode, setDarkMode] = useState(true);
   const [open, setOpen] = useState(false);
-
   return (
     <>
+         <QueryClientProvider client={queryClient}> 
       <ThemeProvider theme={darkMode ? darkTheme : lightTheme}>
         <Container>
           <BrowserRouter>
@@ -61,9 +69,10 @@ function App() {
                 <Routes>
                   <Route path="/">
                     <Route index element={<AppBody />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
+                    <Route path="/about" element={<About  />} />
+                    <Route path="/contact" element={<Contact    />} />
                     <Route path="/offer/:id" element={<IdPage />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="*" element={<PageNotFound />} />
                   </Route>
                 </Routes>
@@ -81,6 +90,7 @@ function App() {
           )}
         </Container>
       </ThemeProvider>
+      </QueryClientProvider>
       <ToastContainer
        
         position="top-right"

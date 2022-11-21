@@ -69,6 +69,7 @@ const imageWarper = styled.div`
 const HeroTitleHeader = styled.h1`
 background-color:${({ theme }) => theme.bg};
 text-align: center;
+font-family: "CairoBold";
 
 `;
 
