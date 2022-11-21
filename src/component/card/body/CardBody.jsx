@@ -7,7 +7,7 @@ function CardBody({ image, detail, id = 150 }) {
       <cpm.IdLink to={`/offer/${id}`}>
         <cpm.BodyWarper>
           <cpm.imageWarper>
-            <cpm.Image src={image} />
+            <cpm.Image src={image} loading="lazy" />
           </cpm.imageWarper>
 
           {/* ----------------------- */}

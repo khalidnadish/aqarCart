@@ -5,17 +5,31 @@ var aqarController  = require("../controller/aqarController");
 const multer=require("multer");
 const path = require("path")
 
-// const storage=multer.diskStorage({
-//     destination:".src/image/",
-//     filename:(req,file,cd) =>{
-//         return canBeRendered(null,
-//             `${file.fieldname_$(Date.now())}${path.extname(file.originalname)}
-//         )}`)
-//     }
-// })
+const storage=multer.diskStorage({
+    destination:(req,file,cb)=>{
+        cb(null,"./public")
+    },
 
-// const upload =multer({storage: storage})
-// router.post("/generalinfo",upload.single("image"),aqarController.updateInfo) ;
+    filename:(req,file,cb) =>{
+        const fileName = `${Date.now()}_${file.originalname.replace(/\s+/g,'-')}`
+        cb(null, fileName)
+
+    }
+})
+
+const upload =multer({storage: storage}).single('heroeimage')
+
+
+router.post("/heroimage",upload,(req, res)=>{
+    const {file} = req;
+    res.send({
+        file: file.originalname,
+        path: file.path,
+    })
+
+
+
+}) ;
 
 router.get("/showall" , aqarController.showAll)
 /* ----------------------------------------- */

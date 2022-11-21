@@ -30,7 +30,7 @@ const HeroImage = () => {
   
   return (
     <>
-      <cpm.Image src={data.heroimage} />
+      <cpm.Image src={data.heroimage} loading="lazy"/>
     </>
   );
 };

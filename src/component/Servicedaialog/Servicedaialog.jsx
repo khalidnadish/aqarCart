@@ -112,7 +112,7 @@ const MapImage = ({lat,lng,image}) => {
       <ImageActionWraper>
          
         <ImageWraper>
-          <Image  src={image} alt={"test"} />
+          <Image  src={image} alt={"test"} loadin="lazy" />
         </ImageWraper>
       </ImageActionWraper>
     </>

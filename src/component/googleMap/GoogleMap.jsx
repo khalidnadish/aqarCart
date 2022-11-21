@@ -120,7 +120,7 @@ const MapImage = ({lat,lng,image}) => {
           <Txt>خط العرض : {lng}</Txt>
         </ActionWraper>
         <ImageWraper>
-          <Image  src={image} alt={"sd"} />
+          <Image  src={image} alt={"sd"} loading="lazy" />
         </ImageWraper>
       </ImageActionWraper>
     </>
