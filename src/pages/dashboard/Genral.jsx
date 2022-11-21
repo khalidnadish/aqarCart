@@ -18,6 +18,7 @@ const Genral = () => {
   const Refadrs = useRef();
   const Reflat = useRef();
   const Refatt = useRef();
+  const Reflocation = useRef();
 
   const { data, isLoading, isFetched } = useGetdata();
   if (isLoading) {
@@ -46,6 +47,7 @@ const Genral = () => {
       adrs: Refadrs.current.value,
       lat: Reflat.current.value,
       att: Refatt.current.value,
+      Reflocation:Refatt.current.value,
     }).then(
       toast.info("بنجاح تم تاسيس المعلومات الاساسية للمنصة")
     );
@@ -146,15 +148,16 @@ const Genral = () => {
             <cpm.Input
               defaultValue={data.data.lat}
               placeholder="lat"
-              width={"49%"}
+              width={"30%"}
               ref={Reflat}
             />
             <cpm.Input
               defaultValue={data.data.att}
               placeholder="lan"
-              width={"49%"}
+              width={"30%"}
               ref={Refatt}
             />
+             <cpm.Input ref={Reflocation}  defaultValue={data.data.location}   width={"30%"} placeholder="loc Image"/> 
           </cpm.FlexDiv>
         </cpm.FieldSet>
 
