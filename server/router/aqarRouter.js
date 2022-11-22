@@ -13,14 +13,13 @@ const storage=multer.diskStorage({
     filename:(req,file,cb) =>{
         const fileName = `${Date.now()}_${file.originalname.replace(/\s+/g,'-')}`
         cb(null, fileName)
-
     }
 })
 
-const upload =multer({storage: storage}).single('heroeimage')
+const upload =multer({storage: storage}).single('logoImage')
 
 
-router.post("/heroimage",upload,(req, res)=>{
+router.post("/logoImage",upload,(req, res)=>{
     const {file} = req;
     res.send({
         file: file.originalname,
@@ -34,6 +33,6 @@ router.post("/heroimage",upload,(req, res)=>{
 router.get("/showall" , aqarController.showAll)
 /* ----------------------------------------- */
 router.get("/getdata" , aqarController.getInfo)
-router.post("/savenewinfo" , aqarController.saveNewInfo)
+router.post("/savenewinfo" ,upload, aqarController.saveNewInfo)
 
 module.exports = router;

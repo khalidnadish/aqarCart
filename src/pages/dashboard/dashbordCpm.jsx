@@ -6,12 +6,9 @@ const BodyWarper = styled.div`
   flex-wrap: wrap;
   position: relative;
   justify-content: center;
-   
   flex-direction: row;
   width: 90%;
   height: calc(100vh - 120px);
-  
-  
   margin: auto;
   color: ${({ theme }) => theme.text};
   min-height: 0px;

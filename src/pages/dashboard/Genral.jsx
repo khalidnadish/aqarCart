@@ -5,6 +5,7 @@ import { useGetdata } from "../../component/utils/hooks/useGetdata";
 import axios from "axios";
 import { toast } from "react-toastify";
 const Genral = () => {
+  const [imageLogo,setImageLogo]=useState()
   const Refid = useRef();
   const Refname = useRef();
   const Reflogo = useRef();
@@ -36,13 +37,15 @@ const Genral = () => {
   const handleData = (e) => {
     e.preventDefault();
     const formData = new FormData(myform);
+    formData.append("logoImage","imageLogo")
     console.log([...formData]);
+    console.log(imageLogo);
 
     const sendData = axios
       .post("http://localhost:3000/aqar/savenewinfo", {
         id: Refid.current.value,
         name: Refname.current.value,
-        logo: Reflogo.current.value,
+        logoImage: imageLogo,
         heroimage: Refheroimage.current.value,
         phone: Refphone.current.value,
         herotext: Refherotext.current.value,
@@ -55,6 +58,8 @@ const Genral = () => {
         lat: Reflat.current.value,
         att: Refatt.current.value,
         Reflocation: Refatt.current.value,
+        formData:formData
+
       })
       .then(toast.info("بنجاح تم تاسيس المعلومات الاساسية للمنصة"));
   };
@@ -81,6 +86,8 @@ const Genral = () => {
           Refatt={Refatt}
           Reflocation={Reflocation}
           RefFrom={RefFrom}
+          imageLogo={imageLogo}
+          setImageLogo={setImageLogo}
         />
       </cpm.BodyWarper>
     </>
@@ -107,11 +114,12 @@ const DataForm = ({
   Refatt,
   Reflocation,
   RefFrom,
+setImageLogo
 }) => {
   return (
     <>
       <Card.NormalDivr>
-        <form onSubmit={handleData} id="myform">
+        <form onSubmit={handleData} id="myform"  >
           <Card.CardWraper>
             <Card.CardHeader>معلومات عامة</Card.CardHeader>
             <Card.CardBody>
@@ -144,11 +152,12 @@ const DataForm = ({
               </cpm.ImageLabelInput>
               <cpm.ImageInput
                 ref={Reflogo}
-                onChange={(e)=>alert(e.target.value)}
+                onChange={(e)=>setImageLogo(e.target.files[0])}
                 placeholder="logoimage"
                 name="logoImage"
                 type={"file"}
                 id="logoimage"
+                accept=".jpg"
               />
             </Card.CardBody>
           </Card.CardWraper>
