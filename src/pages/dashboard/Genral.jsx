@@ -110,12 +110,11 @@ const DataForm = ({
 }) => {
   return (
     <>
-    <Card.NormalDivr  >
-      <form onSubmit={handleData} id="myform">
-        <Card.CardWraper>
-          <Card.CardHeader>معلومات عامة</Card.CardHeader>
-          <Card.CardBody>
-            
+      <Card.NormalDivr>
+        <form onSubmit={handleData} id="myform">
+          <Card.CardWraper>
+            <Card.CardHeader>معلومات عامة</Card.CardHeader>
+            <Card.CardBody>
               <cpm.Input
                 ref={Refid}
                 defaultValue={data.data?.id}
@@ -140,22 +139,24 @@ const DataForm = ({
                 ref={Refphone}
                 name="phone"
               />
-              <cpm.Input
+              <cpm.ImageLabelInput for="logoimage" width={"45%"}>
+                صورة الشعار
+              </cpm.ImageLabelInput>
+              <cpm.ImageInput
                 ref={Reflogo}
-                // defaultValue={data.data.logoimage}
-                width={"45%"}
+                onChange={(e)=>alert(e.target.value)}
                 placeholder="logoimage"
                 name="logoImage"
                 type={"file"}
+                id="logoimage"
               />
-          </Card.CardBody>
-        </Card.CardWraper>
+            </Card.CardBody>
+          </Card.CardWraper>
 
-        {/* ---------------------------------------- */}
-        <Card.CardWraper>
-          <Card.CardHeader>الصفحة الرئسية</Card.CardHeader>
-          <Card.CardBody>
-           
+          {/* ---------------------------------------- */}
+          <Card.CardWraper>
+            <Card.CardHeader>الصفحة الرئسية</Card.CardHeader>
+            <Card.CardBody>
               <cpm.Input
                 defaultValue={data.data.herotext}
                 ref={Refherotext}
@@ -163,13 +164,17 @@ const DataForm = ({
                 placeholder="herotext"
                 name="heroText"
               />
-              <cpm.Input
+              <cpm.ImageLabelInput for="HeroImage" width={"45%"}>
+               صورة الواجهة الرئسيه
+              </cpm.ImageLabelInput>
+              <cpm.ImageInput
                 ref={Refheroimage}
                 width={"45%"}
                 // defaultValue={data.data.heroimage}
                 placeholder="heroimage"
                 name="HeroImage"
                 type={"file"}
+                id="HeroImage"
               />
               <cpm.TextInput
                 defaultValue={data.data.herodeail}
@@ -179,14 +184,12 @@ const DataForm = ({
                 name="HeroDetail"
                 ref={Refherodeail}
               />
-             
-          </Card.CardBody>
-        </Card.CardWraper>
+            </Card.CardBody>
+          </Card.CardWraper>
 
-        <Card.CardWraper>
-          <Card.CardHeader> التواصل الاجتماعي</Card.CardHeader>
-          <Card.CardBody>
-            
+          <Card.CardWraper>
+            <Card.CardHeader> التواصل الاجتماعي</Card.CardHeader>
+            <Card.CardBody>
               <cpm.Input
                 defaultValue={data.data.email}
                 width={"45%"}
@@ -215,14 +218,12 @@ const DataForm = ({
                 ref={Refwhatapp}
                 name="whatsapp"
               />
-            
-          </Card.CardBody>
-        </Card.CardWraper>
+            </Card.CardBody>
+          </Card.CardWraper>
 
-        <Card.CardWraper>
-          <Card.CardHeader> الموقع</Card.CardHeader>
-          <Card.CardBody>
-           
+          <Card.CardWraper>
+            <Card.CardHeader> الموقع</Card.CardHeader>
+            <Card.CardBody>
               <cpm.Input
                 defaultValue={data.data.adrs}
                 placeholder="location"
@@ -244,22 +245,24 @@ const DataForm = ({
                 ref={Refatt}
                 name="lan"
               />
-              <cpm.Input
+              <cpm.ImageLabelInput for="locationImage" width={"45%"}>
+               صورة الخريطة
+              </cpm.ImageLabelInput>
+              <cpm.ImageInput
                 ref={Reflocation}
                 // defaultValue={data.data.location}
                 width={"30%"}
                 placeholder="loc Image"
                 name="locationImage"
                 type={"file"}
+                id="locationImage"
               />
-            
-          </Card.CardBody>
-        </Card.CardWraper>
+            </Card.CardBody>
+          </Card.CardWraper>
 
-         
-        <cpm.Btn type="submit">حفظ التعديلات</cpm.Btn>
-      </form>
-      </Card.NormalDivr> 
+          <cpm.Btn type="submit">حفظ التعديلات</cpm.Btn>
+        </form>
+      </Card.NormalDivr>
     </>
   );
 };

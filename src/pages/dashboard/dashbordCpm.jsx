@@ -205,6 +205,9 @@ const Input = styled.input`
 `;
 
 
+/* ------------------input------------------- */
+
+
  
 
 const TextInput = styled.textarea`
@@ -230,7 +233,26 @@ font-family: "TajawalRegular";
   }
 `;
 
+const ImageInput = styled.input`
+  display: none;
+   
+`;
 
+const ImageLabelInput = styled.label`
+  display: block;
+  /* border: 1px solid; */
+  width: ${({ width }) => width};
+  border-radius: 8px;
+  padding: .3rem;
+  text-align: center;
+  color: white;
+  background-color: #ce6504;
+  font-family: "CairoBold";
+  box-shadow: 6px 4px 13px -7px rgba(0,0,0,0.75);
+-webkit-box-shadow: 6px 4px 13px -7px rgba(0,0,0,0.75);
+-moz-box-shadow: 6px 4px 13px -7px rgba(0,0,0,0.75);
+   
+`;
 
 /* ------------------------------------- */
 export default {
@@ -247,5 +269,8 @@ export default {
   FieldSet,
   Input,
   Txtlabel,
-  TextInput
+  TextInput,
+  ImageInput,
+  ImageLabelInput
+  
 };
